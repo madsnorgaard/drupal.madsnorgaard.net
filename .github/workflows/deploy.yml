@@ -1,0 +1,25 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force_recreate:
+        description: 'Force recreate containers'
+        type: boolean
+        default: false
+      run_updb:
+        description: 'Run drush updb'
+        type: boolean
+        default: true
+
+jobs:
+  deploy:
+    uses: madsnorgaard/contabo-infrastructure/.github/workflows/deploy-drupal.yml@main
+    with:
+      project_dir: drupal.madsnorgaard.net
+      drupal_service: drupal
+      force_recreate: ${{ inputs.force_recreate || false }}
+      run_updb: ${{ inputs.run_updb || true }}
+    secrets: inherit
