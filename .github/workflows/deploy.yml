@@ -15,11 +15,20 @@ on:
         default: true
 
 jobs:
-  deploy:
-    uses: madsnorgaard/contabo-infrastructure/.github/workflows/deploy-drupal.yml@main
-    with:
-      project_dir: drupal.madsnorgaard.net
-      drupal_service: drupal
-      force_recreate: ${{ inputs.force_recreate || false }}
-      run_updb: ${{ inputs.run_updb || true }}
-    secrets: inherit
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          repository: madsnorgaard/contabo-infrastructure
+          event-type: deploy
+          client-payload: |
+            {
+              "project_dir": "drupal.madsnorgaard.net",
+              "project_type": "drupal",
+              "drupal_service": "drupal",
+              "force_recreate": "${{ inputs.force_recreate || false }}",
+              "run_updb": "${{ inputs.run_updb || true }}"
+            }
