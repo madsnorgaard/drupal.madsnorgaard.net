@@ -25,7 +25,11 @@ web/README.md
 web/robots.txt
 web/update.php
 web/web.config
-web/sites/
+# Ignore most of web/sites/ but track services.yml for CORS config
+web/sites/*
+!web/sites/default/
+web/sites/default/*
+!web/sites/default/services.yml
 
 # Hosting data
 data/composer.json
@@ -91,3 +95,7 @@ data/drupal/web/sites/*/private
 *.sql
 /sql
 *.sql.gz
+
+# Local backups (DB dumps + files pulled from VPS2)
+backups/files/
+backups/*.sql.gz

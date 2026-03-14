@@ -1,0 +1,22 @@
+# Default services for drupal.madsnorgaard.net
+# CORS configuration for headless Drupal / Nuxt 3 frontend
+
+parameters:
+  cors.config:
+    enabled: true
+    # Wildcards on allowedHeaders, allowedMethods, and allowedOrigins are supported
+    allowedHeaders:
+      - 'Content-Type'
+      - 'Authorization'
+      - 'X-Requested-With'
+    allowedMethods:
+      - 'GET'
+      - 'OPTIONS'
+    allowedOrigins:
+      - 'https://madsnorgaard.net'
+      - 'http://localhost:3000'
+      - 'https://madsnorgaard.net.ddev.site'
+    allowedOriginsPatterns: []
+    exposedHeaders: false
+    maxAge: false
+    supportsCredentials: false
