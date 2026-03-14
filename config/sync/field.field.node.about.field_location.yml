@@ -1,0 +1,21 @@
+uuid: 1ce59c95-ad2c-4776-85b0-005f155c1619
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.about
+_core:
+  default_config_hash: IEnCsbn50C3e28gBOVFKAAl5FJcFWP3Iu_vROlZIdJc
+id: node.about.field_location
+field_name: field_location
+entity_type: node
+bundle: about
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

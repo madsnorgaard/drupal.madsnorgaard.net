@@ -1,0 +1,13 @@
+uuid: c7dbbc13-a8c4-40f1-b53f-8bbbd381c684
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: USgCo0lnbW8-oY7ewdI56WDmGq4v_RtaX1iN0Ggc0pM
+name: 'Blog post'
+type: blog_post
+description: 'Blog post / article for the writing section'
+help: 'Blog post / article for the writing section.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

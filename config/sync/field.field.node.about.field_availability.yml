@@ -1,0 +1,25 @@
+uuid: cce7d48b-fc1b-426a-91ff-74160c41051f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_availability
+    - node.type.about
+  module:
+    - options
+_core:
+  default_config_hash: _ful8jXiYm5E6oAGxd7d_MaXsKetq-7YwzklmVa28cM
+id: node.about.field_availability
+field_name: field_availability
+entity_type: node
+bundle: about
+label: Availability
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: available
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,90 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about.body
+    - field.field.node.about.field_availability
+    - field.field.node.about.field_availability_note
+    - field.field.node.about.field_current_focus
+    - field.field.node.about.field_location
+    - field.field.node.about.field_profile_image
+    - node.type.about
+  module:
+    - media_library
+    - options
+    - path
+    - text
+id: node.about.default
+targetEntityType: node
+bundle: about
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_current_focus:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_location:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_image:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_availability:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_availability_note:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

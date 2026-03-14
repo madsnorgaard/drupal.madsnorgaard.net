@@ -1,0 +1,22 @@
+uuid: 0876f929-3aad-4648-968f-4d2e9c413100
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: 6RxhmNW-9ODOQKkvwTka8QrbykUXxG84HvUf1HOCnvM
+id: node.field_technologies
+field_name: field_technologies
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

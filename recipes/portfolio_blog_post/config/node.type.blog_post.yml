@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog post'
+type: blog_post
+description: 'Blog post / article for the writing section'
+help: 'Blog post / article for the writing section.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

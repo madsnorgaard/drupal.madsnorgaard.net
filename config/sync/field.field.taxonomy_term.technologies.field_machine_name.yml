@@ -1,0 +1,21 @@
+uuid: 84025f69-4271-410b-81a3-0e0a62df363d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_machine_name
+    - taxonomy.vocabulary.technologies
+_core:
+  default_config_hash: FqaouF_Jgzxst5jyPvCkI_hM4QZPMGjv1zU-obVlgKo
+id: taxonomy_term.technologies.field_machine_name
+field_name: field_machine_name
+entity_type: taxonomy_term
+bundle: technologies
+label: 'Machine name'
+description: 'Unique machine-readable identifier (e.g. drupal, php, docker)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

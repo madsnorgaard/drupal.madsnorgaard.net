@@ -1,0 +1,23 @@
+uuid: 1a4056be-5e2b-460d-aab7-5a0effd857f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: mdxmmYfMnln4744vFxobXqzx55BZSgmjjsX2kgvtb6U
+id: node.field_current_focus
+field_name: field_current_focus
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

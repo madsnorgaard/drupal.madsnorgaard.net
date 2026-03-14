@@ -1,0 +1,74 @@
+uuid: 231f60fe-3a47-4541-a297-20d82e5d059c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.technologies.field_machine_name
+    - field.field.taxonomy_term.technologies.field_tech_color
+    - field.field.taxonomy_term.technologies.field_technology_url
+    - taxonomy.vocabulary.technologies
+  module:
+    - link
+    - path
+    - text
+_core:
+  default_config_hash: _u8kGp6X2HYdJa4ULy4wVFsa_qMn12lOzSYUXtpkC38
+id: taxonomy_term.technologies.default
+targetEntityType: taxonomy_term
+bundle: technologies
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_machine_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tech_color:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 20
+      placeholder: '#C41E3A'
+    third_party_settings: {  }
+  field_technology_url:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+hidden: {  }

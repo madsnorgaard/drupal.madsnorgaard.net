@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employment_type
+    - node.type.work_experience
+  module:
+    - options
+id: node.work_experience.field_employment_type
+field_name: field_employment_type
+entity_type: node
+bundle: work_experience
+label: 'Employment type'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: employed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

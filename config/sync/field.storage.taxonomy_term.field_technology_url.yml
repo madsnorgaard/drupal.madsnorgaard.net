@@ -1,0 +1,21 @@
+uuid: f4e5b494-7655-43de-9e23-bbcda837a5f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+_core:
+  default_config_hash: giZS-d3tpE7gfUEdIgfFvGvh-VFjnuws1k8nORSKFZ4
+id: taxonomy_term.field_technology_url
+field_name: field_technology_url
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

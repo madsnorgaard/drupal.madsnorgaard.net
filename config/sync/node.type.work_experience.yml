@@ -1,0 +1,13 @@
+uuid: 0670c074-6b0f-47de-9531-d6de79470e82
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pc8xwB4gGPcmx9L6AVAqYtV0lrbfMWIn0_mKfSdNsyg
+name: 'Work experience'
+type: work_experience
+description: 'Work and volunteer positions for the CV page'
+help: 'Work and volunteer positions for the CV page.'
+new_revision: false
+preview_mode: 1
+display_submitted: false

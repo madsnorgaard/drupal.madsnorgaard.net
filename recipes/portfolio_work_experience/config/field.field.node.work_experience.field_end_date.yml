@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_end_date
+    - node.type.work_experience
+  module:
+    - datetime
+id: node.work_experience.field_end_date
+field_name: field_end_date
+entity_type: node
+bundle: work_experience
+label: 'End date'
+description: 'Leave empty if current position'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

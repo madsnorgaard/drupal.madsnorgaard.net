@@ -1,0 +1,35 @@
+uuid: 2dcf8198-ccd9-44a3-8276-f46aea49b2e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: UHtYf41z7UU18RC5aNjo8Vg0gtXwULsuTWAQ5Jopje8
+id: node.field_project_category
+field_name: field_project_category
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: professional
+      label: Professional
+    -
+      value: civic
+      label: Civic
+    -
+      value: open-source
+      label: 'Open source'
+    -
+      value: personal
+      label: Personal
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

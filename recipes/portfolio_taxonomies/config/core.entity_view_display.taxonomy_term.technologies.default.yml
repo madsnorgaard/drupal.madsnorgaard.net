@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.technologies.field_machine_name
+    - field.field.taxonomy_term.technologies.field_tech_color
+    - field.field.taxonomy_term.technologies.field_technology_url
+    - taxonomy.vocabulary.technologies
+  module:
+    - link
+id: taxonomy_term.technologies.default
+targetEntityType: taxonomy_term
+bundle: technologies
+mode: default
+content:
+  field_machine_name:
+    type: string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_technology_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tech_color:
+    type: string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

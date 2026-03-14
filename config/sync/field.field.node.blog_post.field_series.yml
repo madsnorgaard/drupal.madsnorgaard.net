@@ -1,0 +1,30 @@
+uuid: bb7254ea-36a1-4cae-875b-481c0c2aef74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_series
+    - node.type.blog_post
+    - taxonomy.vocabulary.series
+_core:
+  default_config_hash: hvYuY54tdZ82RhuavPmZ4RCFrTXfvaZ988kgIG-KBAo
+id: node.blog_post.field_series
+field_name: field_series
+entity_type: node
+bundle: blog_post
+label: Series
+description: 'Optional series this post belongs to'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      series: series
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

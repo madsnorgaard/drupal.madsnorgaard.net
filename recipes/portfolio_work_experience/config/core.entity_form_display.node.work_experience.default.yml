@@ -1,0 +1,107 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.work_experience.body
+    - field.field.node.work_experience.field_employer
+    - field.field.node.work_experience.field_employer_url
+    - field.field.node.work_experience.field_employment_type
+    - field.field.node.work_experience.field_end_date
+    - field.field.node.work_experience.field_is_current
+    - field.field.node.work_experience.field_key_technologies
+    - field.field.node.work_experience.field_start_date
+    - node.type.work_experience
+  module:
+    - datetime
+    - link
+    - options
+    - path
+    - text
+id: node.work_experience.default
+targetEntityType: node
+bundle: work_experience
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Job title / role'
+    third_party_settings: {  }
+  field_employer:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_employer_url:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_start_date:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_end_date:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_is_current:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_employment_type:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    type: text_textarea_with_summary
+    weight: 7
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_key_technologies:
+    type: entity_reference_autocomplete_tags
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

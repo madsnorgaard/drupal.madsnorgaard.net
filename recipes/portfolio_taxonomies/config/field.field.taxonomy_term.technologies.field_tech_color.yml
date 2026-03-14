@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tech_color
+    - taxonomy.vocabulary.technologies
+id: taxonomy_term.technologies.field_tech_color
+field_name: field_tech_color
+entity_type: taxonomy_term
+bundle: technologies
+label: 'Brand color'
+description: 'Hex color code for technology badge (e.g. #C41E3A)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

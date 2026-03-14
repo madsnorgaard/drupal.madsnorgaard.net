@@ -25,11 +25,12 @@ web/README.md
 web/robots.txt
 web/update.php
 web/web.config
-# Ignore most of web/sites/ but track services.yml for CORS config
+# Ignore most of web/sites/ but track services.yml for CORS config and settings.php for config_sync_directory
 web/sites/*
 !web/sites/default/
 web/sites/default/*
 !web/sites/default/services.yml
+!web/sites/default/settings.php
 
 # Hosting data
 data/composer.json

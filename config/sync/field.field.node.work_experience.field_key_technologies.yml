@@ -1,0 +1,30 @@
+uuid: 2a311038-843a-4966-b19e-a079ac1d300e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_key_technologies
+    - node.type.work_experience
+    - taxonomy.vocabulary.technologies
+_core:
+  default_config_hash: 6A_TKULPWcNeK1lGHu9NRHqnK5pqqHGan9Z0ONLjUpc
+id: node.work_experience.field_key_technologies
+field_name: field_key_technologies
+entity_type: node
+bundle: work_experience
+label: 'Key technologies'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      technologies: technologies
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

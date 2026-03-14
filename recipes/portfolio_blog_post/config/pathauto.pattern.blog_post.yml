@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.blog_post
+  module:
+    - node
+    - pathauto
+id: blog_post
+label: 'Blog post'
+type: 'canonical_entities:node'
+pattern: '/blog/[node:title]'
+selection_criteria:
+  f1e2d3c4-b5a6-4789-8a0b-1c2d3e4f5a6b:
+    id: entity_bundle:node
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog_post: blog_post
+selection_logic: and
+weight: 0

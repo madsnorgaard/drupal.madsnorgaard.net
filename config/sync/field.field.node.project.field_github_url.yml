@@ -1,0 +1,25 @@
+uuid: 44488d49-91b7-4b71-b994-8c24b91cb7f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_github_url
+    - node.type.project
+  module:
+    - link
+_core:
+  default_config_hash: 4lMpbb8Wr3Jr7CvsNKO_PfksvmNE3TkurUjqPtG5luU
+id: node.project.field_github_url
+field_name: field_github_url
+entity_type: node
+bundle: project
+label: 'GitHub URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

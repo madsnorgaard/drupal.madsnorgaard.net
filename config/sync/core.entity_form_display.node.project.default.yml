@@ -1,0 +1,145 @@
+uuid: 8b644ff8-def7-4a2a-892f-6f9d8b6e291c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project.field_cover_image
+    - field.field.node.project.field_description
+    - field.field.node.project.field_featured
+    - field.field.node.project.field_github_url
+    - field.field.node.project.field_live_url
+    - field.field.node.project.field_project_category
+    - field.field.node.project.field_project_status
+    - field.field.node.project.field_sort_order
+    - field.field.node.project.field_tagline
+    - field.field.node.project.field_technologies
+    - node.type.project
+  module:
+    - link
+    - media_library
+    - path
+    - text
+_core:
+  default_config_hash: dYBa6BNmmfZBeg-dHLdVdmr8y6RzXDHO0uuFb-PN17U
+id: node.project.default
+targetEntityType: node
+bundle: project
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cover_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_github_url:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_live_url:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_project_category:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_project_status:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sort_order:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tagline:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_technologies:
+    type: entity_reference_autocomplete_tags
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_availability_note
+    - node.type.about
+id: node.about.field_availability_note
+field_name: field_availability_note
+entity_type: node
+bundle: about
+label: 'Availability note'
+description: 'Optional note explaining availability status'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

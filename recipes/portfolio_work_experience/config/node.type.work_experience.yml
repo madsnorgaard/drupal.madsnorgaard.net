@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Work experience'
+type: work_experience
+description: 'Work and volunteer positions for the CV page'
+help: 'Work and volunteer positions for the CV page.'
+new_revision: false
+preview_mode: 1
+display_submitted: false

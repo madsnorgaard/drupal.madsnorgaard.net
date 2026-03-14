@@ -1,0 +1,25 @@
+uuid: 23475f2c-514e-4c61-b24d-7a3a8a7c9e77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employment_type
+    - node.type.work_experience
+  module:
+    - options
+_core:
+  default_config_hash: RrUxpkG33GpP5jKkI--_0G4dHbIZhkSm60dgTYnhQpE
+id: node.work_experience.field_employment_type
+field_name: field_employment_type
+entity_type: node
+bundle: work_experience
+label: 'Employment type'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: employed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

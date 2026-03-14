@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Project
+type: project
+description: 'Portfolio projects with technologies, links, and status'
+help: 'Portfolio projects with technologies, links, and status.'
+new_revision: false
+preview_mode: 1
+display_submitted: false

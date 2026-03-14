@@ -1,0 +1,22 @@
+uuid: 3bbfae14-5f1c-41f1-8da9-78051ac61c0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: HAAsvS4jpjs5BDayLbtQZ_ykrOa9hFo3s3i7RJABw6c
+id: node.field_sort_order
+field_name: field_sort_order
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

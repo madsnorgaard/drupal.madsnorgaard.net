@@ -1,0 +1,5 @@
+name: Portfolio Taxonomies
+description: Creates series and technologies vocabularies with term fields
+install:
+  - taxonomy
+  - link

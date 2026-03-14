@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_start_date
+    - node.type.work_experience
+  module:
+    - datetime
+id: node.work_experience.field_start_date
+field_name: field_start_date
+entity_type: node
+bundle: work_experience
+label: 'Start date'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

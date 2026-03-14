@@ -1,0 +1,69 @@
+uuid: 601d6eef-fa8a-4056-a85e-dc41ded9821f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about.body
+    - field.field.node.about.field_availability
+    - field.field.node.about.field_availability_note
+    - field.field.node.about.field_current_focus
+    - field.field.node.about.field_location
+    - field.field.node.about.field_profile_image
+    - node.type.about
+  module:
+    - options
+    - text
+    - user
+_core:
+  default_config_hash: yilqK5JaNtItAm9ttGmcprxxgFI5tbzwSHVb3mIEOlk
+id: node.about.default
+targetEntityType: node
+bundle: about
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_availability:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_availability_note:
+    type: string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_current_focus:
+    type: string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_location:
+    type: string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_profile_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

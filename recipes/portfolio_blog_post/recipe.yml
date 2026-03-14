@@ -1,0 +1,4 @@
+name: Portfolio Blog Post
+description: Creates the blog_post content type with tags, series, and cover image
+install:
+  - pathauto

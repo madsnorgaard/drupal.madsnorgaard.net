@@ -1,0 +1,11 @@
+uuid: 6243ca4b-310d-4f2e-a0e3-4b65f0ad2d16
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: cGKQRwcnNXnutDC2O2LDKE9mOe7POcARdEMNQtCKb2k
+name: Series
+vid: series
+description: 'Blog post series for grouping related posts'
+weight: 0
+new_revision: false

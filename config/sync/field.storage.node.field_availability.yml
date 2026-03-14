@@ -1,0 +1,32 @@
+uuid: 3b59612f-f9ba-4baa-86f0-c946366a00ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: qFiC4RZIdPv_r2nKAcIHUzHWQ1jiILkMIuErBk_WJ9c
+id: node.field_availability
+field_name: field_availability
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: available
+      label: Available
+    -
+      value: busy
+      label: Busy
+    -
+      value: not-available
+      label: 'Not available'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

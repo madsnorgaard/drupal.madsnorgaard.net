@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_live_url
+    - node.type.project
+  module:
+    - link
+id: node.project.field_live_url
+field_name: field_live_url
+entity_type: node
+bundle: project
+label: 'Live URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

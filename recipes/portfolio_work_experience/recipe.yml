@@ -1,0 +1,5 @@
+name: Portfolio Work Experience
+description: Creates the work_experience content type for the CV page
+install:
+  - datetime
+  - options

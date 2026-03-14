@@ -1,0 +1,7 @@
+name: Portfolio Base
+description: Enables media, installs image media type, creates shared field storages
+install:
+  - media
+  - media_library
+recipes:
+  - core/recipes/image_media_type

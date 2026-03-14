@@ -1,0 +1,13 @@
+uuid: 3ff90d58-5d99-470f-8cb0-8f563dadbdba
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4_XjZmJ-nAqa17KeDB9suU3WuG3Lft4xQqPPjvO2XUM
+name: Project
+type: project
+description: 'Portfolio projects with technologies, links, and status'
+help: 'Portfolio projects with technologies, links, and status.'
+new_revision: false
+preview_mode: 1
+display_submitted: false

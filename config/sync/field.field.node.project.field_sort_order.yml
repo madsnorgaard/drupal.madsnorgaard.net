@@ -1,0 +1,27 @@
+uuid: bf9976c8-c3be-41a1-a194-615f1301b2a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sort_order
+    - node.type.project
+_core:
+  default_config_hash: vmg0TDrIxr2xZcp4E2uEUXNCu9W_8zWdVH3ejBW3RkE
+id: node.project.field_sort_order
+field_name: field_sort_order
+entity_type: node
+bundle: project
+label: 'Sort order'
+description: 'Lower numbers appear first'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+field_type: integer

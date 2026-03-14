@@ -1,0 +1,13 @@
+uuid: 17fa4c1c-86e8-44f2-a901-91530389f5ca
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: VgwLmgmiMNVwggguvE5dCIRE5mWRnv7eOloWmjcas10
+name: About
+type: about
+description: 'Single about/profile page'
+help: 'Single about/profile page for the portfolio site.'
+new_revision: false
+preview_mode: 1
+display_submitted: false

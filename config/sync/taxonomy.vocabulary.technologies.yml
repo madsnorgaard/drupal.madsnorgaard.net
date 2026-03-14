@@ -1,0 +1,11 @@
+uuid: dfbf6a7a-e6d2-40c4-985b-da514bd2afdb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eKcgGpGYc1Xu4AdGOdhrxEEu4AfFti-TTC14dl_Ej-g
+name: Technologies
+vid: technologies
+description: 'Technology tags with metadata for projects and work history'
+weight: 0
+new_revision: false

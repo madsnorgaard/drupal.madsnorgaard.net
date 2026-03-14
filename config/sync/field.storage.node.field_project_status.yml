@@ -1,0 +1,32 @@
+uuid: 30e6269c-0b24-4366-9f2f-9de61b27824f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: s_Yfyym50vdNeQSUlCA9CbwdAAudOB5bBdkOLEEXfI0
+id: node.field_project_status
+field_name: field_project_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: active
+      label: Active
+    -
+      value: archived
+      label: Archived
+    -
+      value: client-work
+      label: 'Client work'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

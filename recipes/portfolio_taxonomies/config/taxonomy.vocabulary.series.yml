@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Series
+vid: series
+description: 'Blog post series for grouping related posts'
+hierarchy: 0
+weight: 0

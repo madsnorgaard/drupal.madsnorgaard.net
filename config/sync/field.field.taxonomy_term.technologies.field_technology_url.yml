@@ -1,0 +1,25 @@
+uuid: ca58fbe4-d401-423b-9472-6720c29822e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_technology_url
+    - taxonomy.vocabulary.technologies
+  module:
+    - link
+_core:
+  default_config_hash: 0gNk06D3hUc9xWGowXUX7xN_HCTvPmxzDAAkhHUD4tg
+id: taxonomy_term.technologies.field_technology_url
+field_name: field_technology_url
+entity_type: taxonomy_term
+bundle: technologies
+label: 'Technology URL'
+description: 'Official website or documentation URL'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

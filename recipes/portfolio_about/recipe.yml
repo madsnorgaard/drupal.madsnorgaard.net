@@ -1,0 +1,4 @@
+name: Portfolio About
+description: Creates the 'about' content type with profile fields
+install:
+  - options

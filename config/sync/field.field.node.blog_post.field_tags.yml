@@ -1,0 +1,29 @@
+uuid: 7a847190-ff34-4d7c-90de-3e86f400b320
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.blog_post
+_core:
+  default_config_hash: ZRIco1AKkQk0VxHom1zzHQnDkASNrs7JJIvnFVV85cc
+id: node.blog_post.field_tags
+field_name: field_tags
+entity_type: node
+bundle: blog_post
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

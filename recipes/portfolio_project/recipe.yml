@@ -1,0 +1,4 @@
+name: Portfolio Project
+description: Creates the project content type with technologies, status, and links
+install:
+  - options

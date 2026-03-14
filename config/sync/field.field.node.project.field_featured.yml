@@ -1,0 +1,25 @@
+uuid: 67263e6a-48fd-4772-8aa3-16086ce6f9fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.project
+_core:
+  default_config_hash: m3OvjRHKszBbc8_diF0AIBh4E9whKjDtYQKXGzizGlA
+id: node.project.field_featured
+field_name: field_featured
+entity_type: node
+bundle: project
+label: Featured
+description: 'Show in featured/highlighted listings'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

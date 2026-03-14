@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Technologies
+vid: technologies
+description: 'Technology tags with metadata for projects and work history'
+hierarchy: 0
+weight: 0
