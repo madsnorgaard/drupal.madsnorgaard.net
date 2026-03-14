@@ -23,9 +23,13 @@ COPY composer.lock /opt/drupal/
 COPY settings.php /opt/drupal/web/sites/default/settings.php
 COPY config/* /opt/drupal/config/
 
+# Install PHP dependencies
+WORKDIR /opt/drupal
+RUN composer install --no-dev --no-interaction --optimize-autoloader
+
 # Set ownership and permissions for /opt/drupal
 RUN chown -R www-data:www-data /opt/drupal /opt/drupal/backups && \
-    chmod -R 775 /opt/drupal 
+    chmod -R 775 /opt/drupal
 
 # Set the working directory
 WORKDIR /opt/drupal
