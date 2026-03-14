@@ -66,6 +66,7 @@ services:
       - ./composer.lock:/opt/drupal/composer.lock
       - ./settings.php:/opt/drupal/web/sites/default/settings.php
       - ./config:/opt/drupal/config
+      - ./recipes:/opt/drupal/recipes
     environment:
       COMPOSER_MEMORY_LIMIT: "2G"
       WEBROOT_SITE: ${WEBROOT_SITE}
