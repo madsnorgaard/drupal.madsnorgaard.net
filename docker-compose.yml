@@ -11,7 +11,6 @@ services:
     env_file:
     - .env
     restart: always
-    user: "1000"
     environment:
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_USER: "${DB_USER}"
@@ -59,13 +58,10 @@ services:
       REDIS_PASSWORD: ${REDIS_PASSWORD}
       REDIS_PORT: 6379
     labels:
+      - "traefik.enable=true"
       - "traefik.http.routers.madsnorgaard_drupal.rule=Host(`drupal.madsnorgaard.net`)"
-      - "traefik.http.routers.madsnorgaard_drupal.tls=true"
       - "traefik.http.routers.madsnorgaard_drupal.tls.certresolver=lets-encrypt"
-      - "traefik.http.middlewares.madsnorgaard_drupal-www-https-redirect.redirectregex.permanent=true"
-      - "traefik.http.middlewares.madsnorgaard_drupal-secure-www-redirect.redirectregex.permanent=true"
-      - "traefik.http.middlewares.web-www-https-redirect.redirectregex.permanent=true"
-      - "traefik.http.routers.drupal.middlewares=web-www-https-redirect"
+      - "traefik.http.services.madsnorgaard_drupal.loadbalancer.server.port=80"
     networks:
       - internal
       - web
