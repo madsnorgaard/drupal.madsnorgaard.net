@@ -1,0 +1,19 @@
+uuid: 7c8d9e0f-1a2b-4c5d-8e9f-0a1b2c3d4e5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_code
+    - node.type.project
+id: node.project.field_short_code
+field_name: field_short_code
+entity_type: node
+bundle: project
+label: 'Short code'
+description: 'Short display code shown on the project card (e.g. NF, SIS, OS2). Auto-computed from title if left empty.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

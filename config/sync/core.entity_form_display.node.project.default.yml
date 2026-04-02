@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.project.field_short_code
     - field.field.node.project.field_cover_image
     - field.field.node.project.field_description
     - field.field.node.project.field_featured
@@ -131,6 +132,14 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_short_code:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 10
+      placeholder: 'e.g. NF, SIS, OS2 (auto-computed if empty)'
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
