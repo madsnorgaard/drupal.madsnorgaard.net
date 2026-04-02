@@ -108,6 +108,8 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+      auto_create: true
+      auto_create_bundle: technologies
     third_party_settings: {  }
   path:
     type: path
