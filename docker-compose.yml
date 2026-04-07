@@ -62,6 +62,12 @@ services:
       - "traefik.http.routers.madsnorgaard_drupal.rule=Host(`drupal.madsnorgaard.net`)"
       - "traefik.http.routers.madsnorgaard_drupal.tls.certresolver=lets-encrypt"
       - "traefik.http.services.madsnorgaard_drupal.loadbalancer.server.port=80"
+      # Per-service CSP — Drupal admin needs unsafe-inline/unsafe-eval for CKEditor
+      - "traefik.http.middlewares.drupal-csp.headers.contentSecurityPolicy=default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; upgrade-insecure-requests"
+      # Strip Drupal-specific fingerprinting headers
+      - "traefik.http.middlewares.drupal-csp.headers.customResponseHeaders.X-Drupal-Cache="
+      - "traefik.http.middlewares.drupal-csp.headers.customResponseHeaders.X-Drupal-Dynamic-Cache="
+      - "traefik.http.routers.madsnorgaard_drupal.middlewares=drupal-csp"
     networks:
       - internal
       - web
