@@ -23,6 +23,12 @@ services:
       - "traefik.enable=false" # Disable Traefik for this service
     networks:
       - internal
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
 
 
   drupal:
@@ -74,8 +80,10 @@ services:
       - internal
       - web
     depends_on:
-      - madsnorgaard_drupal_db
-      - madsnorgaard_redis
+      madsnorgaard_drupal_db:
+        condition: service_healthy
+      madsnorgaard_redis:
+        condition: service_healthy
 
   madsnorgaard_redis:
     image: library/redis:latest
