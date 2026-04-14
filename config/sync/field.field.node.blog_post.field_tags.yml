@@ -1,10 +1,11 @@
-uuid: 7a847190-ff34-4d7c-90de-3e86f400b320
+uuid: 5166f2f7-753a-4725-ae0e-4593e44e21d6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_tags
     - node.type.blog_post
+    - taxonomy.vocabulary.tags
 _core:
   default_config_hash: ZRIco1AKkQk0VxHom1zzHQnDkASNrs7JJIvnFVV85cc
 id: node.blog_post.field_tags

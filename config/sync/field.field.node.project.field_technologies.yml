@@ -1,4 +1,4 @@
-uuid: 42f629ca-463b-4908-b82d-6e5b4995157b
+uuid: 6847f465-1e54-445c-bbf4-37456fb3079a
 langcode: en
 status: true
 dependencies:
@@ -25,6 +25,7 @@ settings:
       technologies: technologies
     sort:
       field: _none
+      direction: asc
     auto_create: true
-    auto_create_bundle: technologies
+    auto_create_bundle: ''
 field_type: entity_reference

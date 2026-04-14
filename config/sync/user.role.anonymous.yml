@@ -8,6 +8,7 @@ dependencies:
     - comment
     - contact
     - filter
+    - media
     - search
     - system
 _core:
@@ -23,3 +24,4 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'use text format restricted_html'
+  - 'view media'

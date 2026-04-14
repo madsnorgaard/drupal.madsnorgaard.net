@@ -1,4 +1,4 @@
-uuid: 6300212b-17e3-4b38-ae95-65c2f6dd961c
+uuid: fa42562f-40b6-4428-999c-da00c9161a26
 langcode: en
 status: true
 dependencies:
@@ -84,14 +84,19 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-      auto_create: true
-      auto_create_bundle: technologies
     third_party_settings: {  }
   field_start_date:
     type: datetime_default
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

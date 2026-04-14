@@ -1,9 +1,8 @@
-uuid: 8b644ff8-def7-4a2a-892f-6f9d8b6e291c
+uuid: c63e245b-8389-41db-a96f-f543870fd669
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.project.field_short_code
     - field.field.node.project.field_cover_image
     - field.field.node.project.field_description
     - field.field.node.project.field_featured
@@ -109,8 +108,13 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-      auto_create: true
-      auto_create_bundle: technologies
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -132,14 +136,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_short_code:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 10
-      placeholder: 'e.g. NF, SIS, OS2 (auto-computed if empty)'
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
