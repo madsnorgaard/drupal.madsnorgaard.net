@@ -8,6 +8,7 @@ services:
   madsnorgaard_drupal_db:
     image: mariadb:11
     container_name: madsnorgaard_drupal_db
+    command: --transaction-isolation=READ-COMMITTED
     env_file:
     - .env
     restart: always
@@ -36,13 +37,14 @@ services:
       - 9998:80
     working_dir: /opt/drupal
     volumes:
-      - ./web:/opt/drupal/web
       - ./backups:/opt/drupal/backups
       - ./composer.json:/opt/drupal/composer.json
       - ./composer.lock:/opt/drupal/composer.lock
       - ./settings.php:/opt/drupal/web/sites/default/settings.php
       - ./config:/opt/drupal/config
       - ./recipes:/opt/drupal/recipes
+      - ./web/modules/custom:/opt/drupal/web/modules/custom
+      - ./web/sites/default/files:/opt/drupal/web/sites/default/files
     environment:
       COMPOSER_MEMORY_LIMIT: "2G"
       WEBROOT_SITE: ${WEBROOT_SITE}
