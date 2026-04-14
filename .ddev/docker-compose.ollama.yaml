@@ -1,0 +1,39 @@
+# DDEV addon: Ollama for local parity with production.
+#
+# Matches the madsnorgaard_ollama service in the root docker-compose.yml so
+# drupal/ai can be wired to http://ollama:11434 in both environments.
+#
+# Models are NOT pre-pulled on local: run `ddev exec -s ollama ollama pull
+# nomic-embed-text` once after `ddev start` to cache the embedding model.
+# This keeps `ddev start` fast on laptops where bandwidth is tight.
+#
+# Remove or rename this file to .disabled if you don't want Ollama running
+# locally.
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ddev-${DDEV_SITENAME}-ollama
+    restart: "no"
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    expose:
+      - "11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_KEEP_ALIVE: "24h"
+
+  # Expose the ollama service to the Drupal web container under the same
+  # hostname we use in production (`madsnorgaard_ollama`) so settings.php
+  # and AI provider configuration can use one identical URL everywhere.
+  web:
+    links:
+      - ollama:madsnorgaard_ollama
+
+volumes:
+  ollama-data:

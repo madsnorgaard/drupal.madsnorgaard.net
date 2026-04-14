@@ -107,11 +107,50 @@ services:
   madsnorgaard_solr:
     image: solr:8.11.2
     container_name: madsnorgaard_solr
+    # Bound to localhost only: SSH-tunnel to reach the admin UI
+    # (ssh -L 8983:127.0.0.1:8983 vps2), never exposed to the internet.
     ports:
-     - "8983:8983"
+      - "127.0.0.1:8983:8983"
     volumes:
       - ./data/solr:/var/solr
       - ./solr/madsnorgaard:/opt/solr/server/solr/madsnorgaard
     restart: unless-stopped
     networks:
       - internal
+
+  madsnorgaard_ollama:
+    # Local LLM runtime for drupal/ai. Internal network only — never exposed
+    # to Traefik/internet. Serves nomic-embed-text for semantic search
+    # embeddings; generation is offloaded to hosted Anthropic via ai module.
+    image: ollama/ollama:latest
+    container_name: madsnorgaard_ollama
+    restart: unless-stopped
+    entrypoint: ["/bin/bash", "/app/ollama-entrypoint.sh"]
+    volumes:
+      - ./data/ollama:/root/.ollama
+      - ./docker/ollama-entrypoint.sh:/app/ollama-entrypoint.sh:ro
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_KEEP_ALIVE: "24h"
+    networks:
+      - internal
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: 3G
+        reservations:
+          cpus: "0.5"
+          memory: 512M
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 300s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
