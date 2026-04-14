@@ -126,7 +126,11 @@ services:
       # so that module has to be loaded explicitly at startup.
       SOLR_MODULES: "analysis-extras"
     volumes:
-      - ./data/solr9:/var/solr
+      # Named volume instead of a host bind mount so Docker manages
+      # ownership automatically — Solr 9 runs as uid 8983 and refuses
+      # to start on a bind-mounted dir that was created as root, and
+      # chowning the host dir would need sudo on the runner.
+      - solr9-data:/var/solr
       - ./solr/drupal:/opt/solr/server/solr/configsets/drupal:ro
     # Bound to localhost only: SSH-tunnel to reach the admin UI
     # (ssh -L 8983:127.0.0.1:8983 vps2), never exposed to the internet.
@@ -181,3 +185,6 @@ services:
       driver: "json-file"
       options:
         max-size: "50m"
+
+volumes:
+  solr9-data:
