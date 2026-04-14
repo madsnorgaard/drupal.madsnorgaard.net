@@ -6,7 +6,12 @@ composer.lock
 drupal/
 .gitattributes
 private/
-solr/
+# Ignore legacy per-core Solr working dirs but track the Solr 9 config set
+# for the `drupal` core so deploys recreate the schema from git instead of
+# hand-rolled state on VPS2. Rule uses solr/* (not solr/) so git recurses
+# into the unignored subdirectory.
+solr/*
+!solr/drupal/
 web/core/
 web/modules/contrib/
 web/themes/contrib/

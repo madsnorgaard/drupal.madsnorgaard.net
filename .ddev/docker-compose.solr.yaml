@@ -1,0 +1,45 @@
+# DDEV addon: Solr 9 for local parity with production.
+#
+# Matches the madsnorgaard_solr service in the root docker-compose.yml so the
+# search_api_solr server configuration can point to identical hostnames on
+# both environments.
+#
+# The config set is bind-mounted from the repo at ../solr/drupal so any
+# schema change committed to git reloads on `ddev restart`.
+
+services:
+  solr:
+    image: solr:9.10.1
+    container_name: ddev-${DDEV_SITENAME}-solr
+    restart: "no"
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    expose:
+      - "8983"
+    command:
+      - solr-precreate
+      - drupal
+      - /opt/solr/server/solr/configsets/drupal
+    environment:
+      SOLR_HEAP: "512m"
+      SOLR_MODULES: "analysis-extras"
+    volumes:
+      - solr9-data:/var/solr
+      - ../solr/drupal:/opt/solr/server/solr/configsets/drupal:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8983/solr/drupal/admin/ping?wt=json >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 90s
+
+  # Expose the solr service to the Drupal web container under the same
+  # hostname production uses (`madsnorgaard_solr`) so one server config
+  # works in both environments.
+  web:
+    links:
+      - solr:madsnorgaard_solr
+
+volumes:
+  solr9-data:

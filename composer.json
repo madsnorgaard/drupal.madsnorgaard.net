@@ -29,6 +29,8 @@
         "drupal/metatag": "^2.0",
         "drupal/pathauto": "^1.13",
         "drupal/redis": "^1.0@dev",
+        "drupal/search_api": "^1.40",
+        "drupal/search_api_solr": "^4.3",
         "drupal/tour": "^2.0",
         "drush/drush": "^13"
     },
