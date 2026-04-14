@@ -65,6 +65,9 @@ services:
       REDIS_HOST: ${REDIS_HOST}
       REDIS_PASSWORD: ${REDIS_PASSWORD}
       REDIS_PORT: 6379
+      # AI content engine: Anthropic API key is pulled from .env and
+      # injected into $config in settings.php, never stored in config/sync.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.madsnorgaard_drupal.rule=Host(`drupal.madsnorgaard.net`)"

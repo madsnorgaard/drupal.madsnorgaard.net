@@ -40,6 +40,15 @@ if (extension_loaded('redis') && file_exists($app_root . '/modules/contrib/redis
     $settings['cache_prefix'] = 'drupal9_redis_';
 }
 
+// Inject the Anthropic API key from the environment so the real secret
+// never lands in config/sync. The ai_provider_anthropic module stores
+// api_key as plain config; shipping it empty in config/sync and overriding
+// via $config here keeps the key out of git while still letting cim run
+// cleanly on deploy. Set ANTHROPIC_API_KEY in the container's .env file.
+if ($anthropic_key = getenv('ANTHROPIC_API_KEY')) {
+    $config['ai_provider_anthropic.settings']['api_key'] = $anthropic_key;
+}
+
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
     include $app_root . '/' . $site_path . '/settings.local.php';
 }
