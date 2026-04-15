@@ -52,7 +52,11 @@ final class SourceItemGrouper {
       return [];
     }
 
-    /** @var array<string, array<int, \Drupal\node\NodeInterface>> $by_topic */
+    // Bucket nodes by topic. Use a nested list (numeric keys) instead of
+    // keying by created timestamp — a burst import of 40 items within one
+    // second produces duplicate timestamps, and associative keys collapse
+    // them so the clusterer sees a fraction of the real backlog.
+    /** @var array<string, list<\Drupal\node\NodeInterface>> $by_topic */
     $by_topic = [];
     foreach ($storage->loadMultiple($nids) as $node) {
       \assert($node instanceof NodeInterface);
@@ -60,15 +64,22 @@ final class SourceItemGrouper {
       if ($node->hasField('field_topic') && !$node->get('field_topic')->isEmpty()) {
         $topic = 'topic:' . $node->get('field_topic')->target_id;
       }
-      $by_topic[$topic][$node->getCreatedTime()] = $node;
+      $by_topic[$topic][] = $node;
     }
+
+    // Ensure each topic bucket is sorted newest-first regardless of the
+    // underlying entity query ordering.
+    foreach ($by_topic as &$items) {
+      \usort($items, static fn (NodeInterface $a, NodeInterface $b): int => $b->getCreatedTime() <=> $a->getCreatedTime());
+    }
+    unset($items);
 
     $clusters = [];
     foreach ($by_topic as $items) {
-      \krsort($items);
       $current = [];
       $anchor_ts = NULL;
-      foreach ($items as $ts => $node) {
+      foreach ($items as $node) {
+        $ts = $node->getCreatedTime();
         if ($anchor_ts === NULL) {
           $anchor_ts = $ts;
         }
