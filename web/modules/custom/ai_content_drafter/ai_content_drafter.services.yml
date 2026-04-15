@@ -1,0 +1,59 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  logger.channel.ai_content_drafter:
+    parent: logger.channel_base
+    arguments: ['ai_content_drafter']
+
+  ai_content_drafter.source_grouper:
+    class: Drupal\ai_content_drafter\Service\SourceItemGrouper
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.channel.ai_content_drafter'
+
+  ai_content_drafter.style_sample_collector:
+    class: Drupal\ai_content_drafter\Service\StyleSampleCollector
+    arguments:
+      - '@entity_type.manager'
+      - '@http_client'
+      - '@config.factory'
+      - '@cache.default'
+      - '@logger.channel.ai_content_drafter'
+
+  ai_content_drafter.semantic_linker:
+    class: Drupal\ai_content_drafter\Service\SemanticLinker
+    arguments:
+      - '@entity_type.manager'
+      - '@ai.provider'
+      - '@config.factory'
+      - '@logger.channel.ai_content_drafter'
+
+  ai_content_drafter.draft_writer:
+    class: Drupal\ai_content_drafter\Service\DraftWriter
+    arguments:
+      - '@entity_type.manager'
+      - '@entity_field.manager'
+      - '@module_handler'
+      - '@config.factory'
+      - '@logger.channel.ai_content_drafter'
+
+  ai_content_drafter.pipeline:
+    class: Drupal\ai_content_drafter\Service\DraftPipeline
+    arguments:
+      - '@ai.provider'
+      - '@ai_content_drafter.source_grouper'
+      - '@ai_content_drafter.style_sample_collector'
+      - '@ai_content_drafter.semantic_linker'
+      - '@ai_content_drafter.draft_writer'
+      - '@config.factory'
+      - '@logger.channel.ai_content_drafter'
+
+  Drupal\ai_content_drafter\Hook\AiContentDrafterHooks:
+    arguments:
+      - '@config.factory'
+      - '@queue'
+      - '@logger.channel.ai_content_drafter'
+    tags:
+      - { name: hook }

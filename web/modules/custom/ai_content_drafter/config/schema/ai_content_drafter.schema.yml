@@ -1,0 +1,34 @@
+ai_content_drafter.settings:
+  type: config_object
+  label: 'AI Content Drafter settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable drafter cron'
+    draft_search_index:
+      type: string
+      label: 'search_api index used for semantic style sample + related link lookup'
+    style_sample_url:
+      type: string
+      label: 'External WP REST endpoint for supplementary style samples'
+    style_sample_fetch_count:
+      type: integer
+      label: 'Number of external style samples to fetch'
+    style_sample_internal_count:
+      type: integer
+      label: 'Number of internal (Drupal) style samples to fetch'
+    internal_link_count:
+      type: integer
+      label: 'Target number of semantic internal links to inject per draft'
+    author_voice_prompt:
+      type: text
+      label: 'Author voice system prompt fragment'
+    group_time_window_seconds:
+      type: integer
+      label: 'Seconds within which Source Items are grouped'
+    min_group_size:
+      type: integer
+      label: 'Minimum Source Items per cluster before drafting'
+    max_group_size:
+      type: integer
+      label: 'Maximum Source Items per cluster'

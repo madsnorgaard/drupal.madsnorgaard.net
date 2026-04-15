@@ -1,0 +1,11 @@
+enabled: false
+draft_search_index: content
+style_sample_url: 'https://photo.madsnorgaard.net/wp-json/wp/v2/posts'
+style_sample_fetch_count: 3
+style_sample_internal_count: 3
+internal_link_count: 3
+author_voice_prompt: |-
+  You are drafting content for Mads Nørgaard's personal site madsnorgaard.net. Voice: direct, technical, first-person, observational. Use hyphens, never em dashes. Structure every draft as: a 1-2 sentence lede, 2-4 H2 sections, a short concluding paragraph. 600-1200 words. Always cite source links inline. Never invent facts not in the supplied source material. Write in English only.
+group_time_window_seconds: 259200
+min_group_size: 1
+max_group_size: 6

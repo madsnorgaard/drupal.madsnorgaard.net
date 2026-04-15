@@ -1,0 +1,7 @@
+ai_content_drafter.settings_form:
+  path: '/admin/config/ai/content-drafter'
+  defaults:
+    _form: '\Drupal\ai_content_drafter\Form\SettingsForm'
+    _title: 'AI Content Drafter settings'
+  requirements:
+    _permission: 'administer ai_content_drafter'

@@ -1,0 +1,4 @@
+administer ai_content_drafter:
+  title: 'Administer AI Content Drafter'
+  description: 'Configure drafter prompt, style sample sources, and cron behaviour.'
+  restrict access: true

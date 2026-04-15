@@ -1,0 +1,15 @@
+name: AI Content Drafter
+type: module
+description: 'Reads unprocessed Source Items from ai_content_ingest, groups them, drafts target content with drupal/ai, fills SEO metadata, injects semantic internal links via search_api_solr_dense_vector, and saves as unpublished drafts. Always-draft — never auto-publishes. Part of the AI content engine epic (#13).'
+package: AI
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:content_moderation
+  - drupal:workflows
+  - ai:ai
+  - ai_content_ingest:ai_content_ingest
+  - search_api:search_api
+  - search_api_solr:search_api_solr
+configure: ai_content_drafter.settings_form

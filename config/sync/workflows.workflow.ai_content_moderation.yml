@@ -1,0 +1,65 @@
+uuid: 878b7cc8-ef40-41b0-af81-4512741f530a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - content_moderation
+id: ai_content_moderation
+label: 'AI Content Moderation'
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 3
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    in_review:
+      label: 'In review'
+      weight: 1
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 2
+      published: true
+      default_revision: true
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 3
+    create_draft:
+      label: 'Create draft'
+      from:
+        - draft
+        - in_review
+      to: draft
+      weight: 0
+    publish:
+      label: Publish
+      from:
+        - draft
+        - in_review
+        - archived
+      to: published
+      weight: 2
+    submit_for_review:
+      label: 'Submit for review'
+      from:
+        - draft
+      to: in_review
+      weight: 1
+  entity_types:
+    node:
+      - article
+  default_moderation_state: draft

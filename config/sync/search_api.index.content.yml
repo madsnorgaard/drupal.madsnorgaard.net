@@ -9,6 +9,15 @@ dependencies:
     - node
     - search_api_solr
     - search_api_solr_dense_vector
+third_party_settings:
+  search_api_solr:
+    dense_vector:
+      enable_vector_rerank: true
+      dense_vector_rank_plugin: pure_vector
+      plugin_configuration:
+        top_k: 20
+        minimum_return: 10
+        minimum_traverse: 0
 id: content
 name: Content
 description: 'Full-text + dense vector index over blog_post and project nodes for semantic related-content lookup.'

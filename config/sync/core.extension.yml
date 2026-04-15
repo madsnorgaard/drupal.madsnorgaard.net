@@ -4,6 +4,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   ai: 0
+  ai_content_drafter: 0
   ai_content_ingest: 0
   ai_provider_anthropic: 0
   ai_provider_ollama: 0
@@ -16,6 +17,7 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   datetime: 0
   dblog: 0
@@ -68,6 +70,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workflows: 0
   pathauto: 1
   views: 10
   standard: 1000

@@ -1,0 +1,5 @@
+ai_content_drafter.settings_form:
+  title: 'AI Content Drafter'
+  description: 'Configure the AI drafting pipeline.'
+  parent: system.admin_config_development
+  route_name: ai_content_drafter.settings_form
