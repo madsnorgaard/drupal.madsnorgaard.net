@@ -34,7 +34,41 @@ settings:
       - codeBlock
       - '|'
       - sourceEditing
+      - '|'
+      - aickeditor
   plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_ckeditor_modify_prompt:
+          enabled: true
+          provider: ''
+        ai_ckeditor_reformat_html:
+          enabled: true
+          provider: ''
+        ai_ckeditor_spellfix:
+          enabled: true
+          provider: ''
+        ai_ckeditor_summarize:
+          enabled: true
+          provider: ''
+        ai_ckeditor_tone:
+          enabled: true
+          provider: ''
+          autocreate: false
+          tone_vocabulary: ''
+          use_description: false
+        ai_ckeditor_translate:
+          enabled: true
+          provider: ''
+          language_source: lang
+          autocreate: false
+          translate_vocabulary: ''
+          use_description: false
     ckeditor5_codeBlock:
       languages:
         -
