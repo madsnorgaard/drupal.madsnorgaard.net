@@ -53,6 +53,7 @@ module:
   menu_ui: 0
   metatag: 0
   mysql: 0
+  navigation: 0
   node: 0
   novicell_chatbot: 0
   options: 0
