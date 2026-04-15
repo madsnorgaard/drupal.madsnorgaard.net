@@ -19,5 +19,11 @@ default_providers:
     provider_id: ollama
     model_id: nomic_embed_text_latest
 request_timeout: 60
-allowed_hosts: {  }
+allowed_hosts:
+  - github.com
+  - drupal.org
+  - madsnorgaard.net
+  - www.madsnorgaard.net
+  - photo.madsnorgaard.net
+  - drupal.madsnorgaard.net
 allowed_hosts_rewrite_links: false
