@@ -1,0 +1,7 @@
+ai_content_ingest.settings_form:
+  path: '/admin/config/ai/content-ingest'
+  defaults:
+    _form: '\Drupal\ai_content_ingest\Form\SettingsForm'
+    _title: 'AI Content Ingest settings'
+  requirements:
+    _permission: 'administer ai_content_ingest'

@@ -1,0 +1,11 @@
+uuid: 972e66ad-a8dc-493a-b85a-5f4fffb2431a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Source Item'
+type: source_item
+description: 'Raw inbound item from RSS/GitHub. Unpublished by default; ai_content_drafter groups these into drafts.'
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

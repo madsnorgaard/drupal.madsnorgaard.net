@@ -1,0 +1,4 @@
+administer ai_content_ingest:
+  title: 'Administer AI Content Ingest'
+  description: 'Configure watched RSS feeds, GitHub repositories, and drafter target bundle.'
+  restrict access: true

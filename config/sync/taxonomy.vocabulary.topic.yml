@@ -1,0 +1,9 @@
+uuid: 7eba10c5-feca-493e-bf16-285b4a52116f
+langcode: en
+status: true
+dependencies: {  }
+name: Topic
+vid: topic
+description: 'Topics the AI content engine watches. Assign to Source Items.'
+weight: 0
+new_revision: false

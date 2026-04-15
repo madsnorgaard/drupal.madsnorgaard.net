@@ -1,0 +1,25 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  logger.channel.ai_content_ingest:
+    parent: logger.channel_base
+    arguments: ['ai_content_ingest']
+
+  ai_content_ingest.github_poller:
+    class: Drupal\ai_content_ingest\Service\GithubPoller
+    arguments:
+      - '@http_client'
+      - '@entity_type.manager'
+      - '@state'
+      - '@logger.channel.ai_content_ingest'
+
+  Drupal\ai_content_ingest\Hook\AiContentIngestHooks:
+    arguments:
+      - '@config.factory'
+      - '@state'
+      - '@queue'
+      - '@logger.channel.ai_content_ingest'
+    tags:
+      - { name: hook }

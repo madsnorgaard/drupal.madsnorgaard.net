@@ -1,0 +1,12 @@
+name: AI Content Ingest
+type: module
+description: 'Staging pipeline for the AI content engine. Polls external sources (RSS feeds via drupal/feeds, GitHub activity via the API) and stores inbound items as unpublished Source Item nodes keyed to Topic taxonomy terms. Phase 5 (ai_content_drafter) reads those Source Items, groups them, and drafts new content with the drupal/ai providers. Part of the AI content engine epic (#13).'
+package: AI
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:link
+  - drupal:options
+  - drupal:feeds
+configure: ai_content_ingest.settings_form

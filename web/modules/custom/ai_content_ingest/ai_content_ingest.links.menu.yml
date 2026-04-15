@@ -1,0 +1,5 @@
+ai_content_ingest.settings_form:
+  title: 'AI Content Ingest'
+  description: 'Configure watched sources and drafter target bundle.'
+  parent: system.admin_config_development
+  route_name: ai_content_ingest.settings_form

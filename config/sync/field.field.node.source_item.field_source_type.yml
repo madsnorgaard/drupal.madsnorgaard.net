@@ -1,0 +1,21 @@
+uuid: 12c70f3f-d828-486a-b8de-299a8c32d308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_type
+    - node.type.source_item
+  module:
+    - options
+id: node.source_item.field_source_type
+field_name: field_source_type
+entity_type: node
+bundle: source_item
+label: 'Source type'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

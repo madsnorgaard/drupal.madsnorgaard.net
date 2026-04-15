@@ -1,0 +1,27 @@
+uuid: 0148ca98-cdce-4a12-9587-a89d9a145c1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_source_type
+field_name: field_source_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: rss
+      label: 'RSS feed'
+    -
+      value: github
+      label: 'GitHub event'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: '-9d4LuUaLdJYbA0H0e21U93qkDVh4AQ58Z9JoxvbVS0'
+target_bundle: article
+target_body_field: body
+default_moderation_state: draft
+max_drafts_per_run: 5
+github_repos: {  }
+github_poll_interval_seconds: 3600
+github_event_types:
+  - release
+  - push
