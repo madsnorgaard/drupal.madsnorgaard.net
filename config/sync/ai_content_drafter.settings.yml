@@ -1,6 +1,6 @@
 _core:
   default_config_hash: XKY_Xmaf-SyKBcoVhTRaqCmlXhOzdZNfwm2eaQg_OWQ
-enabled: false
+enabled: true
 draft_search_index: content
 style_sample_url: 'https://photo.madsnorgaard.net/wp-json/wp/v2/posts'
 style_sample_fetch_count: 3
@@ -10,5 +10,7 @@ author_voice_prompt: "You are drafting content for Mads Nørgaard's personal sit
 group_time_window_seconds: 259200
 min_group_size: 1
 max_group_size: 6
+rocketchat_webhook: ''
+notification_email: ''
 drafter_chat_provider: anthropic
 drafter_chat_model: claude-sonnet-4-5-20250929

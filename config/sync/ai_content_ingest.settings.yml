@@ -3,8 +3,10 @@ _core:
 target_bundle: article
 target_body_field: body
 default_moderation_state: draft
-max_drafts_per_run: 5
-github_repos: {  }
+max_drafts_per_run: 3
+github_repos:
+  - madsnorgaard/drupal.madsnorgaard.net
+  - madsnorgaard/madsnorgaard.net
 github_poll_interval_seconds: 3600
 github_event_types:
   - release
