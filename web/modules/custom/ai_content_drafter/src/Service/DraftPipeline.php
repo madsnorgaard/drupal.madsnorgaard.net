@@ -205,12 +205,25 @@ final class DraftPipeline {
   }
 
   /**
-   * Call the default chat provider and return the raw text response.
+   * Call the drafter's chat provider and return the raw text response.
+   *
+   * Reads drafter_chat_provider / drafter_chat_model from the module's
+   * own settings first so the drafter can use a high-quality hosted
+   * model (e.g. Claude Sonnet) even when the global ai.settings default
+   * is a lightweight local Ollama model used for interactive field
+   * assistance. If the drafter-specific settings are empty, falls back
+   * to ai.settings.default_providers.chat.
    */
   private function invokeChat(ChatInput $input): ?string {
-    $default = $this->configFactory->get('ai.settings')->get('default_providers.chat') ?? [];
-    $provider_id = (string) ($default['provider_id'] ?? 'anthropic');
-    $model_id = (string) ($default['model_id'] ?? self::DEFAULT_CHAT_MODEL);
+    $drafter_cfg = $this->configFactory->get('ai_content_drafter.settings');
+    $provider_id = (string) ($drafter_cfg->get('drafter_chat_provider') ?? '');
+    $model_id = (string) ($drafter_cfg->get('drafter_chat_model') ?? '');
+
+    if ($provider_id === '' || $model_id === '') {
+      $default = $this->configFactory->get('ai.settings')->get('default_providers.chat') ?? [];
+      $provider_id = $provider_id ?: (string) ($default['provider_id'] ?? 'anthropic');
+      $model_id = $model_id ?: (string) ($default['model_id'] ?? self::DEFAULT_CHAT_MODEL);
+    }
 
     try {
       $provider = $this->aiProviderManager->createInstance($provider_id);

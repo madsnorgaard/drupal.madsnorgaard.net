@@ -10,3 +10,5 @@ author_voice_prompt: "You are drafting content for Mads Nørgaard's personal sit
 group_time_window_seconds: 259200
 min_group_size: 1
 max_group_size: 6
+drafter_chat_provider: anthropic
+drafter_chat_model: claude-sonnet-4-5-20250929

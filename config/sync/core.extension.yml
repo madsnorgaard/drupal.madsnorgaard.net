@@ -4,8 +4,10 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   ai: 0
+  ai_ckeditor: 0
   ai_content_drafter: 0
   ai_content_ingest: 0
+  ai_content_suggestions: 0
   ai_provider_anthropic: 0
   ai_provider_ollama: 0
   automated_cron: 0

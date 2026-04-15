@@ -151,6 +151,26 @@ final class SettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('notification_email') ?: '',
     ];
 
+    $form['chat_override'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Drafter chat model override'),
+      '#description' => $this->t('Leave empty to inherit from the global ai.settings chat default. Override here to use a separate high-quality model for long-form drafting while field assistance (CKEditor, content suggestions) inherits a cheaper local model.'),
+    ];
+    $form['chat_override']['drafter_chat_provider'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Drafter chat provider id'),
+      '#default_value' => $config->get('drafter_chat_provider') ?: '',
+      '#size' => 40,
+      '#placeholder' => 'anthropic',
+    ];
+    $form['chat_override']['drafter_chat_model'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Drafter chat model id'),
+      '#default_value' => $config->get('drafter_chat_model') ?: '',
+      '#size' => 60,
+      '#placeholder' => 'claude-sonnet-4-5-20250929',
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -171,6 +191,8 @@ final class SettingsForm extends ConfigFormBase {
       ->set('max_group_size', (int) $form_state->getValue('max_group_size'))
       ->set('rocketchat_webhook', (string) $form_state->getValue('rocketchat_webhook'))
       ->set('notification_email', (string) $form_state->getValue('notification_email'))
+      ->set('drafter_chat_provider', (string) $form_state->getValue('drafter_chat_provider'))
+      ->set('drafter_chat_model', (string) $form_state->getValue('drafter_chat_model'))
       ->save();
 
     parent::submitForm($form, $form_state);

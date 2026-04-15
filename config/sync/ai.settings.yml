@@ -4,11 +4,11 @@ prompt_logging: false
 prompt_logging_tags: ''
 default_providers:
   chat:
-    provider_id: anthropic
-    model_id: claude-sonnet-4-5-20250929
+    provider_id: ollama
+    model_id: qwen2_5_3b
   chat_with_complex_json:
-    provider_id: anthropic
-    model_id: claude-sonnet-4-5-20250929
+    provider_id: ollama
+    model_id: qwen2_5_3b
   chat_with_structured_response:
     provider_id: anthropic
     model_id: claude-sonnet-4-5-20250929
