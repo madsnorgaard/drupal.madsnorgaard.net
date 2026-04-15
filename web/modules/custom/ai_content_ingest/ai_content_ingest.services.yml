@@ -7,6 +7,12 @@ services:
     parent: logger.channel_base
     arguments: ['ai_content_ingest']
 
+  ai_content_ingest.cli_noise_filter_logger_factory:
+    class: Drupal\ai_content_ingest\Logger\CliNoiseFilterLoggerFactory
+    decorates: logger.factory
+    decoration_priority: 100
+    arguments: ['@.inner']
+
   ai_content_ingest.github_poller:
     class: Drupal\ai_content_ingest\Service\GithubPoller
     arguments:
