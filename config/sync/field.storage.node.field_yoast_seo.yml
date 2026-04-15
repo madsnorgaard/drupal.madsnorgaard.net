@@ -1,0 +1,19 @@
+uuid: 5df0b7fe-7925-4801-bfc9-6fa5c81da673
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - yoast_seo
+id: node.field_yoast_seo
+field_name: field_yoast_seo
+entity_type: node
+type: yoast_seo
+settings: {  }
+module: yoast_seo
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -42,7 +42,7 @@ final class DraftWriter {
   /**
    * Create a draft node and return the saved entity.
    *
-   * @param array{title: string, body: string, summary?: string, metatags?: array, keywords?: list<string>} $draft
+   * @param array{title: string, body: string, summary?: string, seo_title?: string, seo_description?: string, keywords?: list<string>} $draft
    *   The drafter output struct.
    *
    * @return \Drupal\node\NodeInterface
@@ -75,6 +75,32 @@ final class DraftWriter {
       ];
     }
 
+    // Metatag field: if the bundle has a metatag field (machine name starts
+    // with field_metatag or is exactly 'metatag'), fill it with the AI's
+    // SEO enrichment output. Metatag stores values as a serialized array.
+    $metatag_field = $this->findMetatagField($field_defs);
+    if ($metatag_field !== NULL && ($draft['seo_title'] || $draft['seo_description'])) {
+      $tags = [];
+      if (!empty($draft['seo_title'])) {
+        $tags['title'] = \mb_substr(Xss::filter((string) $draft['seo_title']), 0, 60);
+      }
+      if (!empty($draft['seo_description'])) {
+        $tags['description'] = \mb_substr(Xss::filter((string) $draft['seo_description']), 0, 155);
+        $tags['og_description'] = $tags['description'];
+        $tags['twitter_cards_description'] = $tags['description'];
+      }
+      if (!empty($draft['keywords'])) {
+        $kw_safe = \array_map(
+          static fn (string $kw): string => \mb_substr(Xss::filter($kw), 0, 40),
+          \array_filter((array) $draft['keywords'], 'is_string')
+        );
+        if ($kw_safe !== []) {
+          $tags['keywords'] = \implode(', ', \array_slice($kw_safe, 0, 6));
+        }
+      }
+      $values[$metatag_field] = \serialize($tags);
+    }
+
     // Respect content_moderation if it's installed and the bundle uses it.
     if ($this->moduleHandler->moduleExists('content_moderation')) {
       $values['moderation_state'] = $moderation_state;
@@ -90,6 +116,23 @@ final class DraftWriter {
     ]);
 
     return $node;
+  }
+
+  /**
+   * Locate a metatag field on the bundle, if one exists.
+   *
+   * Scans the field list for any field of type 'metatag' and returns its
+   * machine name. Supports the common patterns `field_metatags`,
+   * `field_meta_tags`, and a bare 'metatag' field without falling over
+   * if the bundle has none.
+   */
+  private function findMetatagField(array $field_defs): ?string {
+    foreach ($field_defs as $name => $def) {
+      if ($def->getType() === 'metatag') {
+        return $name;
+      }
+    }
+    return NULL;
   }
 
 }

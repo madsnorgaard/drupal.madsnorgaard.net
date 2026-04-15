@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_metatags
     - field.field.node.article.field_tags
+    - field.field.node.article.field_yoast_seo
     - image.style.medium
     - node.type.article
   module:
@@ -49,6 +51,16 @@ third_party_settings:
                     attribute: lazy
                 third_party_settings: {  }
             weight: 0
+            additional: {  }
+          a016f04f-69a9-42a5-869c-3b1d3b4c6f39:
+            uuid: a016f04f-69a9-42a5-869c-3b1d3b4c6f39
+            region: content
+            configuration:
+              id: 'extra_field_block:node:article:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -122,6 +134,11 @@ content:
     third_party_settings: {  }
     weight: 110
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_image:
     type: image
     label: hidden
@@ -147,4 +164,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_metatags: true
+  field_yoast_seo: true
   langcode: true
+  search_api_excerpt: true

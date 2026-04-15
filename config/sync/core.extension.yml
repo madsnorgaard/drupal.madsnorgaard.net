@@ -19,17 +19,21 @@ module:
   contact: 0
   content_moderation: 0
   contextual: 0
+  crop: 0
   datetime: 0
   dblog: 0
   decoupled_router: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   feeds: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  focal_point: 0
   gin_toolbar: 0
+  google_tag: 0
   help: 0
   history: 0
   image: 0
@@ -55,12 +59,16 @@ module:
   path_alias: 0
   redirect: 0
   redis: 0
+  schema_article: 0
+  schema_metatag: 0
+  schema_web_page: 0
   search: 0
   search_api: 0
   search_api_solr: 0
   search_api_solr_dense_vector: 0
   serialization: 0
   shortcut: 0
+  simple_sitemap: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -71,6 +79,7 @@ module:
   user: 0
   views_ui: 0
   workflows: 0
+  yoast_seo: 0
   pathauto: 1
   views: 10
   standard: 1000

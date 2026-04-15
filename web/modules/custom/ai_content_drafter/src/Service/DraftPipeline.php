@@ -127,11 +127,13 @@ final class DraftPipeline {
     $linked = $this->linker->inject($body, $link_count, $exclude);
     $body = $linked['body'];
 
-    // 5. Persist as unpublished draft.
+    // 5. Persist as unpublished draft with SEO metatags populated.
     $draft = [
-      'title' => $seo['title'] ?: $title,
+      'title' => $title,
       'body' => $body,
       'summary' => $seo['description'] ?? '',
+      'seo_title' => $seo['title'] ?? '',
+      'seo_description' => $seo['description'] ?? '',
       'keywords' => $seo['keywords'] ?? [],
     ];
     $node = $this->writer->write($draft);
