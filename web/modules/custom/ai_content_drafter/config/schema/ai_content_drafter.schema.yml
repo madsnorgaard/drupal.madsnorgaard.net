@@ -32,3 +32,9 @@ ai_content_drafter.settings:
     max_group_size:
       type: integer
       label: 'Maximum Source Items per cluster'
+    rocketchat_webhook:
+      type: string
+      label: 'Rocket.Chat incoming webhook URL for draft notifications'
+    notification_email:
+      type: email
+      label: 'Email address to notify on new draft (fallback)'

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_ai_drafted
     - field.field.node.article.field_image
     - field.field.node.article.field_metatags
     - field.field.node.article.field_tags
@@ -164,6 +165,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_ai_drafted: true
   field_metatags: true
   field_yoast_seo: true
   langcode: true

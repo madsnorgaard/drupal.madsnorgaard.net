@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Bridge to Drupal hooks that don't yet support OOP attributes in D11.3.
+ *
+ * Everything that CAN go in src/Hook/AiContentDrafterHooks.php via
+ * `#[Hook(...)]` attributes already does. This file is intentionally
+ * minimal — only the mail hook lives here because hook_mail is still
+ * invoked procedurally by MailManager in 11.3.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_mail().
+ */
+function ai_content_drafter_mail(string $key, array &$message, array $params): void {
+  if ($key !== 'draft_ready') {
+    return;
+  }
+  $message['subject'] = $params['subject'] ?? 'AI draft ready';
+  $body = $params['body'] ?? [];
+  $message['body'] = \is_array($body) ? $body : [(string) $body];
+  $message['headers']['Content-Type'] = 'text/plain; charset=UTF-8';
+}

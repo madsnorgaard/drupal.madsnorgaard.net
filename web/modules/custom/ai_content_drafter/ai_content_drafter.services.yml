@@ -30,6 +30,14 @@ services:
       - '@config.factory'
       - '@logger.channel.ai_content_drafter'
 
+  ai_content_drafter.draft_notifier:
+    class: Drupal\ai_content_drafter\Service\DraftNotifier
+    arguments:
+      - '@config.factory'
+      - '@http_client'
+      - '@plugin.manager.mail'
+      - '@logger.channel.ai_content_drafter'
+
   ai_content_drafter.draft_writer:
     class: Drupal\ai_content_drafter\Service\DraftWriter
     arguments:
@@ -37,6 +45,7 @@ services:
       - '@entity_field.manager'
       - '@module_handler'
       - '@config.factory'
+      - '@ai_content_drafter.draft_notifier'
       - '@logger.channel.ai_content_drafter'
 
   ai_content_drafter.pipeline:

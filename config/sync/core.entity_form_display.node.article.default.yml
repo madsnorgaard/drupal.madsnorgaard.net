@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_ai_drafted
     - field.field.node.article.field_image
     - field.field.node.article.field_metatags
     - field.field.node.article.field_tags
@@ -134,5 +135,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_ai_drafted: true
   field_metatags: true
   field_yoast_seo: true

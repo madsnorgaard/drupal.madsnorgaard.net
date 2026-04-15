@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\ai_content_drafter\Service;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
@@ -36,6 +37,7 @@ final class DraftWriter {
     private readonly EntityFieldManagerInterface $fieldManager,
     private readonly ModuleHandlerInterface $moduleHandler,
     private readonly ConfigFactoryInterface $configFactory,
+    private readonly DraftNotifier $notifier,
     private readonly LoggerChannelInterface $logger,
   ) {}
 
@@ -98,12 +100,22 @@ final class DraftWriter {
           $tags['keywords'] = \implode(', ', \array_slice($kw_safe, 0, 6));
         }
       }
-      $values[$metatag_field] = \serialize($tags);
+      // Metatag 2.x stores field values as JSON-encoded strings. The
+      // decoder in metatag_data_decode() also accepts legacy serialised PHP
+      // for back-compat, but we ship the current format to avoid triggering
+      // the v1 code path.
+      $values[$metatag_field] = Json::encode($tags);
     }
 
     // Respect content_moderation if it's installed and the bundle uses it.
     if ($this->moduleHandler->moduleExists('content_moderation')) {
       $values['moderation_state'] = $moderation_state;
+    }
+
+    // Flag the node so the admin review view can distinguish AI drafts
+    // from human drafts without parsing body content.
+    if (isset($field_defs['field_ai_drafted'])) {
+      $values['field_ai_drafted'] = 1;
     }
 
     $node = $storage->create($values);
@@ -114,6 +126,9 @@ final class DraftWriter {
       '@bundle' => $target_bundle,
       '@title' => $node->getTitle(),
     ]);
+
+    // Best-effort notification. Failure does not unwind the save.
+    $this->notifier->notify($node);
 
     return $node;
   }

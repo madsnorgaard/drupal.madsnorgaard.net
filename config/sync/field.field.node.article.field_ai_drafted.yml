@@ -1,0 +1,23 @@
+uuid: 05417822-aa95-42ec-8659-73f7ac18c266
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_drafted
+    - node.type.article
+id: node.article.field_ai_drafted
+field_name: field_ai_drafted
+entity_type: node
+bundle: article
+label: 'AI drafted'
+description: 'Marked TRUE by ai_content_drafter when the node was authored by the pipeline. Used to filter the AI draft review queue.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

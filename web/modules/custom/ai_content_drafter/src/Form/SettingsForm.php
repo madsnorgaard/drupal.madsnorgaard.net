@@ -133,6 +133,24 @@ final class SettingsForm extends ConfigFormBase {
       '#max' => 20,
     ];
 
+    $form['notifications'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Notifications'),
+      '#description' => $this->t('Sent on every successful draft save. Rocket.Chat is tried first; if empty, the email fallback is used.'),
+    ];
+    $form['notifications']['rocketchat_webhook'] = [
+      '#type' => 'url',
+      '#title' => $this->t('Rocket.Chat incoming webhook URL'),
+      '#description' => $this->t('Must match https://&lt;host&gt;/hooks/&lt;token&gt; — other URLs are rejected.'),
+      '#default_value' => $config->get('rocketchat_webhook') ?: '',
+    ];
+    $form['notifications']['notification_email'] = [
+      '#type' => 'email',
+      '#title' => $this->t('Notification email (fallback)'),
+      '#description' => $this->t('Used only when the Rocket.Chat webhook is empty.'),
+      '#default_value' => $config->get('notification_email') ?: '',
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -151,6 +169,8 @@ final class SettingsForm extends ConfigFormBase {
       ->set('group_time_window_seconds', (int) $form_state->getValue('group_time_window_seconds'))
       ->set('min_group_size', (int) $form_state->getValue('min_group_size'))
       ->set('max_group_size', (int) $form_state->getValue('max_group_size'))
+      ->set('rocketchat_webhook', (string) $form_state->getValue('rocketchat_webhook'))
+      ->set('notification_email', (string) $form_state->getValue('notification_email'))
       ->save();
 
     parent::submitForm($form, $form_state);
