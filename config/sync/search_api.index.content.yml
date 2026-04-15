@@ -1,0 +1,169 @@
+uuid: cb81f447-5ae7-4f90-9458-b2bcc8079a16
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.drupal
+  module:
+    - node
+    - search_api_solr
+    - search_api_solr_dense_vector
+id: content
+name: Content
+description: 'Full-text + dense vector index over blog_post and project nodes for semantic related-content lookup.'
+read_only: false
+field_settings:
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  embedding:
+    label: Embedding
+    property_path: rendered_item
+    type: solr_densevector
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          blog_post: default
+          project: default
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          blog_post: default
+          project: default
+  status:
+    label: 'Publishing status'
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: 5.0
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: 'Author ID'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - blog_post
+        - project
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url:
+    weights:
+      preprocess_index: -10
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  custom_value: {  }
+  entity_status:
+    weights:
+      preprocess_index: -10
+  entity_type: {  }
+  html_filter:
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: false
+    fields:
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      b: 2.0
+      em: 1.5
+      h1: 5.0
+      h2: 3.0
+      h3: 2.0
+      strong: 2.0
+      u: 1.5
+  language_with_fallback: {  }
+  rendered_item:
+    weights:
+      preprocess_index: -30
+    roles:
+      - anonymous
+    view_mode:
+      'entity:node':
+        blog_post: default
+        project: default
+  solr_date_range: {  }
+  solr_densevector:
+    weights:
+      preprocess_index: 100
+    ai_provider: ollama
+    ai_model_id: nomic_embed_text_latest
+    vector_dimension: 768
+    similarity_function: cosine
+    content_field: rendered_item
+  tokenizer:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -5
+    all_fields: false
+    fields:
+      - rendered_item
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: false
+  track_changes_in_references: true
+server: drupal

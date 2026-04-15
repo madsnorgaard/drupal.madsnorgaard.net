@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fcef02846f534c2a5b4336d4867c62c",
+    "content-hash": "d944539423d6388dc4d35bdd565f9cb1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2476,6 +2476,54 @@
                 "source": "http://git.drupal.org/project/search_api_solr.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "chat": "https://drupalchat.me/channel/search"
+            }
+        },
+        {
+            "name": "drupal/search_api_solr_dense_vector",
+            "version": "1.0.0-alpha9",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_solr_dense_vector.git",
+                "reference": "1.0.0-alpha9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_solr_dense_vector-1.0.0-alpha9.zip",
+                "reference": "1.0.0-alpha9",
+                "shasum": "6a0f1eea62938476b91530ef4edc806027c6564e"
+            },
+            "require": {
+                "drupal/ai": "^1.0",
+                "drupal/core": "^10.3 || ^11.0",
+                "drupal/search_api": "*",
+                "drupal/search_api_solr": "^4.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha9",
+                    "datestamp": "1769694972",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Quillen",
+                    "homepage": "https://www.drupal.org/u/kevinquillen"
+                }
+            ],
+            "description": "Provides an implementation of Dense Vector field support for Solr 9.6+ in Drupal.",
+            "homepage": "https://www.drupal.org/project/search_api_solr_dense_vector",
+            "support": {
+                "source": "https://www.drupal.org/project/search_api_solr_dense_vector",
+                "issues": "https://www.drupal.org/project/search_api_solr_dense_vector"
             }
         },
         {
@@ -8698,7 +8746,8 @@
     "stability-flags": {
         "drupal/ai": 15,
         "drupal/ai_provider_ollama": 5,
-        "drupal/redis": 20
+        "drupal/redis": 20,
+        "drupal/search_api_solr_dense_vector": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
