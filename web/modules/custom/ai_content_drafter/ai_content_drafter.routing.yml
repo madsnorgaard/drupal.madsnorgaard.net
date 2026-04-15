@@ -5,3 +5,13 @@ ai_content_drafter.settings_form:
     _title: 'AI Content Drafter settings'
   requirements:
     _permission: 'administer ai_content_drafter'
+
+ai_content_drafter.semantic_search:
+  path: '/api/semantic-search'
+  methods: [GET]
+  defaults:
+    _controller: '\Drupal\ai_content_drafter\Controller\SemanticSearchController::search'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_big_pipe: 'TRUE'
