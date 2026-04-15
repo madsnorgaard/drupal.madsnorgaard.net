@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - search_api.server.drupal
   module:
     - node
@@ -30,8 +31,9 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
-          blog_post: default
-          project: default
+          article: teaser
+          project: teaser
+          work_experience: teaser
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -48,8 +50,9 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
-          blog_post: default
-          project: default
+          article: teaser
+          project: teaser
+          work_experience: teaser
   status:
     label: 'Publishing status'
     datasource_id: 'entity:node'
@@ -92,8 +95,9 @@ datasource_settings:
     bundles:
       default: false
       selected:
-        - blog_post
+        - article
         - project
+        - work_experience
     languages:
       default: true
       selected: {  }
@@ -136,8 +140,9 @@ processor_settings:
       - anonymous
     view_mode:
       'entity:node':
-        blog_post: default
-        project: default
+        article: teaser
+        project: teaser
+        work_experience: teaser
   solr_date_range: {  }
   solr_densevector:
     weights:
