@@ -9,6 +9,9 @@ RUN set -eux; \
 RUN pecl install redis \
     && docker-php-ext-enable redis
 
+# Drop in custom PHP tuning (memory_limit bump for drush cim + upload sizes).
+COPY docker/php-drupal.ini /usr/local/etc/php/conf.d/99-drupal.ini
+
 # Create the necessary directories and set permissions
 RUN mkdir -p /opt/drupal/web/sites/default/files && \
     mkdir -p /opt/drupal/web/sites/default/files/assets/js && \
