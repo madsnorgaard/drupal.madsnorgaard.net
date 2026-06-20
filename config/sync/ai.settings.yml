@@ -27,3 +27,4 @@ allowed_hosts:
   - photo.madsnorgaard.net
   - drupal.madsnorgaard.net
 allowed_hosts_rewrite_links: false
+global_guardrails: {  }

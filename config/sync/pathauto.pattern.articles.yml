@@ -12,7 +12,6 @@ selection_criteria:
   171adbd1-c6f9-4e01-b1f9-afeaf2b7d708:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 171adbd1-c6f9-4e01-b1f9-afeaf2b7d708
     context_mapping:
       node: node
     bundles:
