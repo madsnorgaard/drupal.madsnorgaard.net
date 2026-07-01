@@ -78,7 +78,18 @@ services:
       # Strip Drupal-specific fingerprinting headers
       - "traefik.http.middlewares.drupal-csp.headers.customResponseHeaders.X-Drupal-Cache="
       - "traefik.http.middlewares.drupal-csp.headers.customResponseHeaders.X-Drupal-Dynamic-Cache="
-      - "traefik.http.routers.madsnorgaard_drupal.middlewares=drupal-csp"
+      # SEO: noindex the whole headless backend - it byte-for-byte duplicates
+      # madsnorgaard.net (each /article/* == /writing/*). Crawling stays ALLOWED
+      # (no robots.txt Disallow) so Google can see the noindex and drop the pages.
+      - "traefik.http.middlewares.drupal-noindex.headers.customResponseHeaders.X-Robots-Tag=noindex, nofollow"
+      - "traefik.http.routers.madsnorgaard_drupal.middlewares=drupal-csp,drupal-noindex"
+      # Files stay indexable (the frontend references these images): a more
+      # specific Host+PathPrefix router serves /sites/default/files WITHOUT the
+      # noindex middleware. Host+PathPrefix outranks the Host-only rule.
+      - "traefik.http.routers.madsnorgaard_drupal_files.rule=Host(`drupal.madsnorgaard.net`) && PathPrefix(`/sites/default/files`)"
+      - "traefik.http.routers.madsnorgaard_drupal_files.tls.certresolver=lets-encrypt"
+      - "traefik.http.routers.madsnorgaard_drupal_files.service=madsnorgaard_drupal"
+      - "traefik.http.routers.madsnorgaard_drupal_files.middlewares=drupal-csp"
     networks:
       - internal
       - web
