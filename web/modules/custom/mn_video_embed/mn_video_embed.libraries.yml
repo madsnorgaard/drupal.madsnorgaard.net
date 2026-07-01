@@ -1,0 +1,5 @@
+oembed_responsive:
+  version: 1.x
+  css:
+    theme:
+      css/video-embed.css: {}

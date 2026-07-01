@@ -1,0 +1,5 @@
+name: 'MN Video Embed'
+type: module
+description: 'Responsive styling for oEmbed (Remote video) media on the canonical site.'
+package: 'Mads Nørgaard'
+core_version_requirement: ^10 || ^11

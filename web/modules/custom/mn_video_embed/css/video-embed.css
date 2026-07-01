@@ -1,0 +1,22 @@
+/**
+ * Responsive oEmbed video.
+ *
+ * The core oEmbed formatter outputs a fixed-size iframe inside
+ * .media-oembed-content, which overflows on narrow screens. Constrain it to a
+ * centred 16:9 box that scales to its container.
+ */
+.media-oembed-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.media-oembed-content iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
