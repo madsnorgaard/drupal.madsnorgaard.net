@@ -1,0 +1,28 @@
+uuid: 760d376b-b967-4e08-8f3d-a40e9df32134
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - media.type.remote_video
+    - node.type.article
+id: node.article.field_video
+field_name: field_video
+entity_type: node
+bundle: article
+label: Video
+description: 'Paste a YouTube or Vimeo URL. The player is added automatically.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

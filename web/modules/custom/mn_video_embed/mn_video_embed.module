@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Attaches responsive oEmbed styling to the canonical site.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function mn_video_embed_page_attachments(array &$attachments): void {
+  $attachments['#attached']['library'][] = 'mn_video_embed/oembed_responsive';
+}
