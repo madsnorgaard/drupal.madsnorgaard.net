@@ -41,7 +41,7 @@
         "drupal/search_api_solr": "^4.3",
         "drupal/search_api_solr_dense_vector": "^1.0@alpha",
         "drupal/simple_sitemap": "^4.2",
-        "drupal/tour": "^2.0",
+        "drupal/tour": "^3.0",
         "drupal/yoast_seo": "^2.2",
         "drush/drush": "^13"
     },
