@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9dffa18ba7b19d3df020ed713c19597",
+    "content-hash": "05137c7aebe72174c36398b7555abc3e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3146,20 +3146,20 @@
         },
         {
             "name": "drupal/tour",
-            "version": "2.0.17",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tour.git",
-                "reference": "2.0.17"
+                "reference": "3.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tour-2.0.17.zip",
-                "reference": "2.0.17",
-                "shasum": "42c020512ee76d6d0648fc5a3eaf04bb99a06175"
+                "url": "https://ftp.drupal.org/files/projects/tour-3.0.0.zip",
+                "reference": "3.0.0",
+                "shasum": "08a065ae1e217aa30e76233417d944a29b019b44"
             },
             "require": {
-                "drupal/core": "^10.3 || ^11"
+                "drupal/core": "^11.3 || ^12"
             },
             "require-dev": {
                 "drupal/dashboard": "*",
@@ -3172,8 +3172,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.17",
-                    "datestamp": "1769735179",
+                    "version": "3.0.0",
+                    "datestamp": "1782838401",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9628,6 +9628,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/ai": 15,
         "drupal/ai_provider_ollama": 5,
         "drupal/redis": 20,
         "drupal/search_api_solr_dense_vector": 15
