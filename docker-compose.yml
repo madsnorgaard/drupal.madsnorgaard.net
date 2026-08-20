@@ -39,8 +39,6 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     restart: always
-    ports:
-      - 9998:80
     working_dir: /opt/drupal
     volumes:
       - ./backups:/opt/drupal/backups
@@ -148,57 +146,3 @@ services:
       - ./solr/drupal:/opt/solr/server/solr/configsets/drupal:ro
     # Bound to localhost only: SSH-tunnel to reach the admin UI
     # (ssh -L 8983:127.0.0.1:8983 vps2), never exposed to the internet.
-    ports:
-      - "127.0.0.1:8983:8983"
-    networks:
-      - internal
-    healthcheck:
-      test: ["CMD-SHELL", "curl -fsS http://localhost:8983/solr/drupal/admin/ping?wt=json >/dev/null || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 90s
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "50m"
-
-  madsnorgaard_ollama:
-    # Local LLM runtime for drupal/ai. Internal network only — never exposed
-    # to Traefik/internet. Serves nomic-embed-text for semantic search
-    # embeddings; generation is offloaded to hosted Anthropic via ai module.
-    image: ollama/ollama:latest
-    container_name: madsnorgaard_ollama
-    restart: unless-stopped
-    entrypoint: ["/bin/bash", "/app/ollama-entrypoint.sh"]
-    volumes:
-      - ./data/ollama:/root/.ollama
-      - ./docker/ollama-entrypoint.sh:/app/ollama-entrypoint.sh:ro
-    environment:
-      OLLAMA_HOST: 0.0.0.0:11434
-      OLLAMA_NUM_PARALLEL: "1"
-      OLLAMA_MAX_LOADED_MODELS: "1"
-      OLLAMA_KEEP_ALIVE: "24h"
-    networks:
-      - internal
-    deploy:
-      resources:
-        limits:
-          cpus: "4"
-          memory: 3G
-        reservations:
-          cpus: "0.5"
-          memory: 512M
-    healthcheck:
-      test: ["CMD-SHELL", "ollama list >/dev/null 2>&1 || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 300s
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "50m"
-
-volumes:
-  solr9-data:
