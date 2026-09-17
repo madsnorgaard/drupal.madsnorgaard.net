@@ -6,7 +6,7 @@ networks:
 
 services:
   madsnorgaard_drupal_db:
-    image: mariadb:11
+    image: mariadb:13
     container_name: madsnorgaard_drupal_db
     command: --transaction-isolation=READ-COMMITTED
     env_file:
