@@ -33,3 +33,8 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
+    ignore:
+      # Stateful services (Solr, MariaDB) need a planned migration, never
+      # an unattended major bump.
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
