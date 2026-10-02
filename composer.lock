@@ -1827,7 +1827,7 @@
         },
         {
             "name": "drupal/core-project-message",
-            "version": "11.4.7",
+            "version": "11.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -1865,7 +1865,7 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/11.4.7"
+                "source": "https://github.com/drupal/core-project-message/tree/11.4.8"
             },
             "time": "2026-01-07T19:00:53+00:00"
         },
@@ -10997,6 +10997,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/ai": 15,
         "drupal/ai_provider_ollama": 5,
         "drupal/redis": 20,
         "drupal/search_api_solr_dense_vector": 15
