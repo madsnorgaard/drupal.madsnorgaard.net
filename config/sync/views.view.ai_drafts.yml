@@ -1,3 +1,4 @@
+uuid: a1b9b7a3-3670-4c49-bf5e-b7720806a85e
 langcode: en
 status: true
 dependencies:
@@ -27,12 +28,12 @@ display:
           id: title
           table: node_field_data
           field: title
-          entity_type: node
-          entity_field: title
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: Title
           exclude: false
           alter:
@@ -92,10 +93,10 @@ display:
           id: moderation_state
           table: node__moderation_state
           field: moderation_state
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: State
           exclude: false
           alter:
@@ -154,12 +155,12 @@ display:
           id: created
           table: node_field_data
           field: created
-          entity_type: node
-          entity_field: created
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: field
           label: Drafted
           exclude: false
           alter:
@@ -224,11 +225,11 @@ display:
           id: edit_node
           table: node
           field: edit_node
-          entity_type: node
-          plugin_id: entity_link_edit
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: entity_link_edit
           label: Operations
           exclude: false
           alter:
@@ -320,26 +321,26 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: false
-          content: 'Nothing in the review queue. Check back after the next cron run.'
           plugin_id: text_custom
+          empty: true
+          content: 'Nothing in the review queue. Check back after the next cron run.'
+          tokenize: false
       sorts:
         created:
           id: created
           table: node_field_data
           field: created
-          entity_type: node
-          entity_field: created
-          plugin_id: date
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
           order: DESC
-          exposed: false
           expose:
             label: ''
             field_identifier: ''
+          exposed: false
           granularity: second
       arguments: {  }
       filters:
@@ -347,12 +348,12 @@ display:
           id: type
           table: node_field_data
           field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
           operator: in
           value:
             article: article
@@ -389,10 +390,10 @@ display:
           id: field_ai_drafted_value
           table: node__field_ai_drafted
           field: field_ai_drafted_value
-          plugin_id: boolean
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: boolean
           operator: '='
           value: '1'
           group: 1
@@ -427,12 +428,12 @@ display:
           id: status
           table: node_field_data
           field: status
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
           operator: '='
           value: '0'
           group: 1
@@ -506,10 +507,10 @@ display:
               responsive: ''
           override: true
           sticky: false
-          caption: ''
           summary: ''
-          description: ''
           empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
         options:
@@ -526,14 +527,14 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: ''
+      use_ajax: false
+      group_by: false
+      display_description: ''
+      show_admin_links: true
       header: {  }
       footer: {  }
       display_extenders: {  }
-      use_ajax: false
-      group_by: false
-      css_class: ''
-      display_description: ''
-      show_admin_links: true
   page_1:
     id: page_1
     display_title: 'AI drafts queue'
@@ -548,6 +549,6 @@ display:
         description: 'Review AI-generated drafts'
         weight: 10
         expanded: false
+        menu_name: admin
         parent: ''
         context: '0'
-        menu_name: admin
