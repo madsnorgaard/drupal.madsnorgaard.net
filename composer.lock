@@ -2862,21 +2862,24 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "2.2.5",
+            "version": "2.2.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "2.2.5"
+                "reference": "2.2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.5.zip",
-                "reference": "2.2.5",
-                "shasum": "2851a7dd5e5b3c0c15defa658790386af4556199"
+                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.6.zip",
+                "reference": "2.2.6",
+                "shasum": "9cd10f4b3eecc038921ed6a16f84fb9d5946af4e"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
                 "drupal/token": "^1.17"
+            },
+            "conflict": {
+                "drupal/schema_metatag": "< 3.1.0"
             },
             "require-dev": {
                 "drupal/diff": "*",
@@ -2892,8 +2895,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.2.5",
-                    "datestamp": "1793445181",
+                    "version": "2.2.6",
+                    "datestamp": "1793891825",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
