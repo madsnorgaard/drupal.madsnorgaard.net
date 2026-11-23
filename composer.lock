@@ -1111,17 +1111,17 @@
         },
         {
             "name": "drupal/ai",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai.git",
-                "reference": "1.5.2"
+                "reference": "1.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai-1.5.2.zip",
-                "reference": "1.5.2",
-                "shasum": "b47b8a1bdc0ee719766cdd337cbfddd6eb0e8c70"
+                "url": "https://ftp.drupal.org/files/projects/ai-1.5.3.zip",
+                "reference": "1.5.3",
+                "shasum": "aa97498ca57273483491dc418de99037236ea8cf"
             },
             "require": {
                 "drupal/ai_content_suggestions": "^1.5",
@@ -1161,8 +1161,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.5.2",
-                    "datestamp": "1793214802",
+                    "version": "1.5.3",
+                    "datestamp": "1795101176",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1193,6 +1193,10 @@
                 {
                     "name": "anjaliprasannan",
                     "homepage": "https://www.drupal.org/user/3637917"
+                },
+                {
+                    "name": "breidert",
+                    "homepage": "https://www.drupal.org/user/135619"
                 },
                 {
                     "name": "b_sharpe",
@@ -1257,34 +1261,38 @@
             ],
             "description": "AI module for Drupal",
             "homepage": "https://www.drupal.org/project/ai",
+            "keywords": [
+                "Actively maintained",
+                "Automation"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai"
             }
         },
         {
             "name": "drupal/ai_content_suggestions",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_content_suggestions.git",
-                "reference": "1.5.2"
+                "reference": "1.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_content_suggestions-1.5.2.zip",
-                "reference": "1.5.2",
-                "shasum": "a2f03b657f754eea5ebf305b9a8d77fc06970a05"
+                "url": "https://ftp.drupal.org/files/projects/ai_content_suggestions-1.5.3.zip",
+                "reference": "1.5.3",
+                "shasum": "2cfd41659b781abe37057bdf89f3e23a492bf7cd"
             },
             "require": {
                 "drupal/ai": "^1.4",
-                "drupal/core": "^10.4 || ^11",
+                "drupal/core": "^10.4 || ^11 || ^12",
                 "drupal/field_widget_actions": "^1.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.5.2",
-                    "datestamp": "1791397977",
+                    "version": "1.5.3",
+                    "datestamp": "1795035533",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1315,27 +1323,32 @@
             ],
             "description": "AI Content suggestions for fields",
             "homepage": "https://www.drupal.org/project/ai_content_suggestions",
+            "keywords": [
+                "Actively maintained",
+                "Artificial Intelligence (AI)"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_content_suggestions"
             }
         },
         {
             "name": "drupal/ai_logging",
-            "version": "1.3.3",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_logging.git",
-                "reference": "1.3.3"
+                "reference": "1.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_logging-1.3.3.zip",
-                "reference": "1.3.3",
-                "shasum": "7d273b4ec17bed4a1a992cfe6512fc30ae4e68fe"
+                "url": "https://ftp.drupal.org/files/projects/ai_logging-1.3.4.zip",
+                "reference": "1.3.4",
+                "shasum": "fb3c69b2208ad4783fe7b2b7aade97b46a88c059"
             },
             "require": {
                 "drupal/ai": "^1.2",
-                "drupal/core": "^10.4 || ^11"
+                "drupal/core": "^10.4 || ^11 || ^12",
+                "league/commonmark": "^2.4"
             },
             "conflict": {
                 "drupal/ai": "<1.2"
@@ -1343,8 +1356,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.3.3",
-                    "datestamp": "1790178601",
+                    "version": "1.3.4",
+                    "datestamp": "1794842991",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1363,6 +1376,10 @@
             ],
             "description": "AI Logging module (formerly sub-module of AI Core)",
             "homepage": "https://www.drupal.org/project/ai_logging",
+            "keywords": [
+                "Actively maintained",
+                "Artificial Intelligence (AI)"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_logging"
             }
@@ -1504,39 +1521,42 @@
         },
         {
             "name": "drupal/ai_translate",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_translate.git",
-                "reference": "1.4.4"
+                "reference": "1.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_translate-1.4.4.zip",
-                "reference": "1.4.4",
-                "shasum": "644a47d6aa7ce1f500c0f6070b382bf41110c4a0"
+                "url": "https://ftp.drupal.org/files/projects/ai_translate-1.4.5.zip",
+                "reference": "1.4.5",
+                "shasum": "6b4d657fe11b5d7185100eb202e47f000b1bd049"
             },
             "require": {
                 "drupal/ai": ">1.2.1",
-                "drupal/core": "^10.4 || ^11"
+                "drupal/core": "^10.4 || ^11 || ^12"
             },
             "conflict": {
                 "drupal/tool": "<1.0.0-beta10"
             },
             "require-dev": {
+                "drupal/ai_context": "1.0.x-dev",
+                "drupal/ai_disclosure": "^1.0@beta",
                 "drupal/layout_builder_at": "^3.0",
                 "drupal/layout_builder_st": "^2.0",
                 "drupal/tool": "^1.0.0-beta10",
                 "drush/drush": "^12 || ^13"
             },
             "suggest": {
+                "drupal/ai_context": "1.0.0-beta5 or later. Push site context into chat-proxy translations via the Context Control Center consumer type.",
                 "drupal/tool": "Install to expose AI Translate as a Tool plugin via the optional ai_translate_tool submodule."
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.4.4",
-                    "datestamp": "1793183967",
+                    "version": "1.4.5",
+                    "datestamp": "1795015812",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1581,23 +1601,27 @@
             ],
             "description": "This module provides simple one-click AI-powered translations.",
             "homepage": "https://www.drupal.org/project/ai_translate",
+            "keywords": [
+                "Actively maintained",
+                "Artificial Intelligence (AI)"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_translate"
             }
         },
         {
             "name": "drupal/ai_validations",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_validations.git",
-                "reference": "1.4.0"
+                "reference": "1.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_validations-1.4.0.zip",
-                "reference": "1.4.0",
-                "shasum": "e325bbcd5eb34c8a9f343707c6cefc62756b6c92"
+                "url": "https://ftp.drupal.org/files/projects/ai_validations-1.4.1.zip",
+                "reference": "1.4.1",
+                "shasum": "f30e830d7403cb11283b739728bbd66204fdb547"
             },
             "require": {
                 "drupal/ai": "^1.3",
@@ -1613,8 +1637,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.4.0",
-                    "datestamp": "1792067901",
+                    "version": "1.4.1",
+                    "datestamp": "1795082573",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1649,6 +1673,10 @@
             ],
             "description": "AI support for the Field Validation module",
             "homepage": "https://www.drupal.org/project/ai_validations",
+            "keywords": [
+                "Actively maintained",
+                "Artificial Intelligence (AI)"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_validations"
             }
@@ -2845,20 +2873,20 @@
         },
         {
             "name": "drupal/key",
-            "version": "1.22.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/key.git",
-                "reference": "8.x-1.22"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.22.zip",
-                "reference": "8.x-1.22",
-                "shasum": "14b4b8ce1917dcbcf2d67955564b8b484f30cdda"
+                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "275ad00d2f369685741ed395c5384f6f589db4a5"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10 || ^11"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "require-dev": {
                 "drush/drush": ">=9"
@@ -2869,8 +2897,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.22",
-                    "datestamp": "1768921252",
+                    "version": "8.x-1.23",
+                    "datestamp": "1793686862",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3934,26 +3962,26 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
+                "reference": "9bef884e12278a7b89b64adbfb9379c021d3c102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
-                "reference": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/9bef884e12278a7b89b64adbfb9379c021d3c102",
+                "reference": "9bef884e12278a7b89b64adbfb9379c021d3c102",
                 "shasum": ""
             },
             "require": {
-                "doctrine/lexer": "^2.0 || ^3.0",
+                "doctrine/lexer": "^3.0.3",
                 "php": ">=8.1",
-                "symfony/polyfill-intl-idn": "^1.26"
+                "symfony/polyfill-intl-idn": "^1.43"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.2",
-                "vimeo/psalm": "^5.12"
+                "phpunit/phpunit": "^10.5.67",
+                "vimeo/psalm": "^5.26.1"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -3989,7 +4017,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/4.0.4"
+                "source": "https://github.com/egulias/EmailValidator/tree/4.0.5"
             },
             "funding": [
                 {
@@ -3997,7 +4025,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-06T22:45:56+00:00"
+            "time": "2026-11-22T16:52:20+00:00"
         },
         {
             "name": "goalgorilla/rtseo.js",
@@ -4149,22 +4177,22 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.16.5",
+            "version": "7.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b0605f32e77a13cf98bc5e75b1d71877b6814e17"
+                "reference": "f61ba5ea0a55032a55ddbb72cab7d307c1043654"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b0605f32e77a13cf98bc5e75b1d71877b6814e17",
-                "reference": "b0605f32e77a13cf98bc5e75b1d71877b6814e17",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f61ba5ea0a55032a55ddbb72cab7d307c1043654",
+                "reference": "f61ba5ea0a55032a55ddbb72cab7d307c1043654",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^2.6.1",
-                "guzzlehttp/psr7": "^2.13.5",
+                "guzzlehttp/promises": "^2.6.2",
+                "guzzlehttp/psr7": "^2.13.6",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.0",
@@ -4257,7 +4285,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.16.5"
+                "source": "https://github.com/guzzle/guzzle/tree/7.17.0"
             },
             "funding": [
                 {
@@ -4273,7 +4301,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-20T22:56:33+00:00"
+            "time": "2026-11-22T16:49:11+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -4361,16 +4389,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.13.5",
+            "version": "2.13.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "5aa00c5418afbe3f435910af0e98cb03d659c49d"
+                "reference": "2bd3dccf56e99cdacf74b1ad5e06a08a5a7739f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5aa00c5418afbe3f435910af0e98cb03d659c49d",
-                "reference": "5aa00c5418afbe3f435910af0e98cb03d659c49d",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2bd3dccf56e99cdacf74b1ad5e06a08a5a7739f2",
+                "reference": "2bd3dccf56e99cdacf74b1ad5e06a08a5a7739f2",
                 "shasum": ""
             },
             "require": {
@@ -4460,7 +4488,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.13.5"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.6"
             },
             "funding": [
                 {
@@ -4476,7 +4504,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-19T20:34:53+00:00"
+            "time": "2026-11-21T23:48:40+00:00"
         },
         {
             "name": "halaxa/json-machine",
@@ -11175,7 +11203,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/ai": 15,
         "drupal/ai_provider_ollama": 5,
         "drupal/redis": 20,
         "drupal/search_api_solr_dense_vector": 15
